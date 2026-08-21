@@ -1,0 +1,362 @@
+[
+  {
+    "id": "sat-core",
+    "title": "SAT",
+    "chapter": 1,
+    "section": 1,
+    "blurb": "Grid headings and the scales you must use.",
+    "cards": [
+      {
+        "id": "sat-appearance",
+        "term": "Appearance",
+        "definition": "Assess clarity, intensity, and colour. Note bubbles or sediment if present."
+      },
+      {
+        "id": "sat-nose",
+        "term": "Nose",
+        "definition": "Assess condition, intensity, and aroma characteristics. Identify faults before describing fruit."
+      },
+      {
+        "id": "sat-palate",
+        "term": "Palate",
+        "definition": "Record sweetness, acidity, tannin, alcohol, body, flavour intensity, flavour characteristics, and finish."
+      },
+      {
+        "id": "sat-conclusions",
+        "term": "Conclusions",
+        "definition": "State quality level and readiness for drinking / ageing potential."
+      },
+      {
+        "id": "sat-clarity",
+        "term": "Clarity",
+        "definition": "Clear or hazy. Haze may be a fault or acceptable in an unfiltered wine."
+      },
+      {
+        "id": "sat-colour-intensity",
+        "term": "Colour intensity",
+        "definition": "Depth of colour on appearance: pale, medium, or deep."
+      },
+      {
+        "id": "sat-aroma-intensity",
+        "term": "Aroma / flavour intensity",
+        "definition": "Light, medium(−), medium, medium(+), or pronounced. Not the same scale as colour intensity."
+      },
+      {
+        "id": "sat-finish",
+        "term": "Finish",
+        "definition": "How long flavour lasts after the wine is spat or swallowed: short, medium(−/+/none), or long."
+      },
+      {
+        "id": "sat-quality",
+        "term": "Quality",
+        "definition": "Judged from balance, length, intensity, and complexity. Not personal liking."
+      },
+      {
+        "id": "sat-readiness",
+        "term": "Readiness",
+        "definition": "Too young; can drink now but has potential for ageing; drink now, not suitable for ageing; or too old."
+      },
+      {
+        "id": "sat-scale",
+        "term": "Hyphenated SAT scale",
+        "definition": "Choose one term from the row. Do not write a range."
+      },
+      {
+        "id": "sat-faults",
+        "term": "Faults",
+        "definition": "If cork taint, oxidation, reduction, or volatile acidity dominate, name the fault and the wine is faulty."
+      },
+      {
+        "id": "sat-structure",
+        "term": "Structural components",
+        "definition": "Sweetness, acidity, tannin, alcohol, and body. These frame flavour and drive conclusions."
+      }
+    ]
+  },
+  {
+    "id": "vine-climate",
+    "title": "Vine and climate",
+    "chapter": 4,
+    "section": 5,
+    "blurb": "Plant, heat, and the growing season.",
+    "cards": [
+      {
+        "id": "vc-vinifera",
+        "term": "Vitis vinifera",
+        "definition": "The species used for almost all wine production."
+      },
+      {
+        "id": "vc-phylloxera",
+        "term": "Phylloxera",
+        "definition": "A root-feeding insect that kills vinifera on its own roots. Control is grafting onto resistant rootstocks."
+      },
+      {
+        "id": "vc-rootstock",
+        "term": "Rootstock",
+        "definition": "Usually a non-vinifera or hybrid root. Chosen for phylloxera resistance, soil, and vigour."
+      },
+      {
+        "id": "vc-photosynthesis",
+        "term": "Photosynthesis",
+        "definition": "Leaves convert sunlight to sugar. Sugar ripens fruit and later ferments to alcohol."
+      },
+      {
+        "id": "vc-climate",
+        "term": "Climate",
+        "definition": "The long-term temperature, rainfall, and sunlight pattern of a region. It decides which grapes can ripen."
+      },
+      {
+        "id": "vc-weather",
+        "term": "Weather",
+        "definition": "Conditions in a given year. The main cause of vintage variation."
+      },
+      {
+        "id": "vc-cool",
+        "term": "Cool climate",
+        "definition": "Growing-season mean about 16.5°C or below. Higher acidity, lighter body, if the fruit still ripens."
+      },
+      {
+        "id": "vc-moderate",
+        "term": "Moderate climate",
+        "definition": "Growing-season mean about 16.5–18.5°C. Many classic European still-wine regions sit here."
+      },
+      {
+        "id": "vc-warm",
+        "term": "Warm climate",
+        "definition": "Growing-season mean about 18.5–21°C. Riper fruit, higher alcohol, lower acidity, fuller body."
+      },
+      {
+        "id": "vc-diurnal",
+        "term": "Diurnal range",
+        "definition": "Gap between daytime and night-time temperature. Cool nights slow acid loss while days still ripen flavour."
+      },
+      {
+        "id": "vc-continentality",
+        "term": "Continentality",
+        "definition": "Gap between the hottest and coldest months. Continental sites have a shorter, more intense growing season."
+      },
+      {
+        "id": "vc-frost",
+        "term": "Spring frost",
+        "definition": "Can kill bursting buds and wipe the crop. Site, late pruning, and frost protection are the usual responses."
+      },
+      {
+        "id": "vc-water",
+        "term": "Water",
+        "definition": "Needed for photosynthesis and growth. Too little stops ripening; too much dilutes fruit and raises disease pressure."
+      }
+    ]
+  },
+  {
+    "id": "vineyard",
+    "title": "Vineyard management",
+    "chapter": 6,
+    "section": 1,
+    "blurb": "Training, yield, and canopy.",
+    "cards": [
+      {
+        "id": "vy-training",
+        "term": "Training",
+        "definition": "The permanent shape of the vine on a trellis or as a free-standing bush."
+      },
+      {
+        "id": "vy-pruning",
+        "term": "Pruning",
+        "definition": "The annual cut that sets bud number and therefore this year's potential yield."
+      },
+      {
+        "id": "vy-canopy",
+        "term": "Canopy management",
+        "definition": "Arranging leaves and bunches for light, airflow, and even ripening, and to limit disease."
+      },
+      {
+        "id": "vy-yield",
+        "term": "Yield",
+        "definition": "Crop size, usually tonnes/ha or hl/ha. High yield can dilute flavour; very low yield can delay ripening."
+      },
+      {
+        "id": "vy-irrigation",
+        "term": "Irrigation",
+        "definition": "Applied water. Common in dry climates; restricted or banned in many European appellations."
+      },
+      {
+        "id": "vy-vsp",
+        "term": "VSP",
+        "definition": "Vertical shoot positioning: shoots trained upright into a thin curtain of leaves."
+      },
+      {
+        "id": "vy-gobelet",
+        "term": "Gobelet (bush vine)",
+        "definition": "Untrained or minimally trained, no high trellis. Used in hot, dry, or windy sites and for old vines."
+      },
+      {
+        "id": "vy-green",
+        "term": "Green harvesting",
+        "definition": "Removing some unripe bunches so remaining fruit can ripen more fully."
+      },
+      {
+        "id": "vy-harvest",
+        "term": "Harvest timing",
+        "definition": "The last vineyard decision. It fixes sugar, acid, tannin ripeness, and flavour."
+      },
+      {
+        "id": "vy-organic",
+        "term": "Organic viticulture",
+        "definition": "Certified limits on synthetic herbicides, insecticides, and fertilisers. It does not by itself define wine style."
+      },
+      {
+        "id": "vy-biodynamic",
+        "term": "Biodynamic viticulture",
+        "definition": "Organic rules plus specified preparations and a farm as a closed system. Again, not a style guarantee."
+      },
+      {
+        "id": "vy-density",
+        "term": "Planting density",
+        "definition": "Vines per hectare. Higher density often means more competition, lower yield per vine, and a need for more labour."
+      }
+    ]
+  },
+  {
+    "id": "winery",
+    "title": "Winemaking",
+    "chapter": 7,
+    "section": 9,
+    "blurb": "Shared cellar options, then colour.",
+    "cards": [
+      {
+        "id": "wy-crush",
+        "term": "Crushing and pressing",
+        "definition": "Crushing splits berries. Pressing separates juice or wine from skins and seeds."
+      },
+      {
+        "id": "wy-inoculated",
+        "term": "Cultured yeast",
+        "definition": "Selected Saccharomyces inoculated for a reliable, complete ferment."
+      },
+      {
+        "id": "wy-ambient",
+        "term": "Ambient yeast",
+        "definition": "Yeast already on grapes or in the winery. Less control; can add complexity or risk a stuck ferment."
+      },
+      {
+        "id": "wy-temp-white",
+        "term": "White ferment temperature",
+        "definition": "Typically cool (about 12–22°C) to retain fresh fruit aromas."
+      },
+      {
+        "id": "wy-temp-red",
+        "term": "Red ferment temperature",
+        "definition": "Typically warmer (about 20–32°C) to extract colour, tannin, and flavour from skins."
+      },
+      {
+        "id": "wy-mlf",
+        "term": "Malolactic conversion",
+        "definition": "Lactic acid bacteria convert malic acid to lactic acid. Standard for most reds; optional for whites. Softens acidity and can add buttery notes if diacetyl is present."
+      },
+      {
+        "id": "wy-lees",
+        "term": "Lees",
+        "definition": "Dead yeast cells. Ageing on lees can add body and flavour; bâtonnage (stirring) increases contact."
+      },
+      {
+        "id": "wy-oak",
+        "term": "Oak vessels",
+        "definition": "Allow slow oxygen ingress and can add flavour (vanilla, clove, toast). New oak has more flavour than old; small barrels more than large."
+      },
+      {
+        "id": "wy-steel",
+        "term": "Stainless steel",
+        "definition": "Inert, easy to temperature-control, no oak flavour. Used to preserve primary fruit."
+      },
+      {
+        "id": "wy-so2",
+        "term": "Sulfur dioxide (SO2)",
+        "definition": "Antioxidant and antimicrobial. Used from harvest through bottling to protect the wine."
+      },
+      {
+        "id": "wy-maceration",
+        "term": "Maceration",
+        "definition": "Time on skins. For reds this extracts colour, tannin, and flavour; for rosé it is short; for most whites it is little or none."
+      },
+      {
+        "id": "wy-carbonic",
+        "term": "Carbonic maceration",
+        "definition": "Intact berries in a CO2-rich environment. Intracellular fermentation gives low tannin and distinct banana/kirsch fruit. Used especially in Beaujolais."
+      },
+      {
+        "id": "wy-rose",
+        "term": "Rosé production",
+        "definition": "Direct press, short maceration, or (less often, and in some regions only) blending red and white. Saignée is bleeding juice from a red ferment."
+      }
+    ]
+  },
+  {
+    "id": "law",
+    "title": "Wine law",
+    "chapter": 11,
+    "section": 1,
+    "blurb": "PDO, PGI, and what a label may claim.",
+    "cards": [
+      {
+        "id": "law-pdo",
+        "term": "PDO",
+        "definition": "Protected Designation of Origin. The stricter EU geographic category: smaller area, defined grapes and production."
+      },
+      {
+        "id": "law-pgi",
+        "term": "PGI",
+        "definition": "Protected Geographical Indication. Broader area and more flexible grape and winemaking rules than PDO."
+      },
+      {
+        "id": "law-gi",
+        "term": "GI",
+        "definition": "Geographic indication outside the EU PDO/PGI ladder. Often defines place more than recipe."
+      },
+      {
+        "id": "law-aoc",
+        "term": "AOC / DOCG / DO",
+        "definition": "National names that sit inside PDO (France AOC/AOP, Italy DOCG/DOC, Spain DO/DOCa)."
+      },
+      {
+        "id": "law-variety-label",
+        "term": "Variety labelling",
+        "definition": "Common on New World labels. EU PDO wines often omit variety because the place implies it."
+      },
+      {
+        "id": "law-reserve",
+        "term": "Reserva / Reserve",
+        "definition": "Legally defined ageing in some countries (e.g. Spain, Italy). Unregulated marketing language in others."
+      },
+      {
+        "id": "law-chaptalization",
+        "term": "Enrichment (chaptalisation)",
+        "definition": "Adding sugar (or must concentrate) before or during ferment to raise potential alcohol. Allowed in cooler EU zones, restricted or banned in warmer ones."
+      },
+      {
+        "id": "law-acidification",
+        "term": "Acidification",
+        "definition": "Adding acid, usually tartaric. More often permitted in warm regions; rules are specific to the country."
+      },
+      {
+        "id": "law-yield",
+        "term": "Maximum yield",
+        "definition": "Many PDOs cap hl/ha. Lower legal maxima are used as one quality control."
+      },
+      {
+        "id": "law-vintage",
+        "term": "Vintage claim",
+        "definition": "If a vintage is stated, a high percentage of the wine must come from that harvest (exact % is set by law)."
+      },
+      {
+        "id": "law-protected",
+        "term": "Protected traditional terms",
+        "definition": "Names such as Champagne or Port may only be used for wine from that place, in markets that enforce the protection."
+      },
+      {
+        "id": "law-sulfites",
+        "term": "Contains sulfites",
+        "definition": "A common mandatory allergen-style statement when SO2 is above the legal threshold."
+      }
+    ]
+  }
+]

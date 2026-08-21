@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WSET L3 Study</title>
+<style>
+  /* Tokens — study desk (locked). Use only these.
+     --paper: #f3ece1;
+     --paper-deep: #e8dcc8;
+     --card: #fbf6ee;
+     --card-raised: #fffdf8;
+     --ink: #2a2218;
+     --ink-muted: #6b5e50;
+     --ink-faint: #9a8c7a;
+     --rule: #d4c6b0;
+     --wine: #7a2e32;
+     --wine-deep: #5c2226;
+     --wine-soft: #f0ddd8;
+     --known: #3d5344;
+     --known-bg: #e4ebe4;
+     --unknown: #8a4a32;
+     --unknown-bg: #f3e4d8;
+     --focus: #7a2e32;
+     --shadow: 0 1px 2px rgba(42,34,24,0.06), 0 8px 24px rgba(42,34,24,0.06);
+     Content: Palatino Linotype, Palatino, "Iowan Old Style", Georgia, "Times New Roman", serif
+     Chrome: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif
+  */
+  :root {
+    --paper: #f3ece1;
+    --paper-deep: #e8dcc8;
+    --card: #fbf6ee;
+    --card-raised: #fffdf8;
+    --ink: #2a2218;
+    --ink-muted: #6b5e50;
+    --ink-faint: #9a8c7a;
+    --rule: #d4c6b0;
+    --wine: #7a2e32;
+    --wine-deep: #5c2226;
+    --wine-soft: #f0ddd8;
+    --known: #3d5344;
+    --known-bg: #e4ebe4;
+    --unknown: #8a4a32;
+    --unknown-bg: #f3e4d8;
+    --focus: #7a2e32;
+    --shadow: 0 1px 2px rgba(42,34,24,0.06), 0 8px 24px rgba(42,34,24,0.06);
+    --font-content: Palatino Linotype, Palatino, "Iowan Old Style", Georgia, "Times New Roman", serif;
+    --font-chrome: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --ease: ease-out;
+    --t: 180ms;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  body {
+    font-family: var(--font-content);
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    min-width: 360px;
+    line-height: 24px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  body.has-thumb {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+  .app {
+    width: 100%;
+    max-width: 720px;
+    min-width: 360px;
+    margin: 0 auto;
+    padding: 16px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-top: max(16px, env(safe-area-inset-top, 0px));
+  }
+  @media (min-width: 720px) {
+    .app { padding: 24px; padding-top: max(24px, env(safe-area-inset-top, 0px)); }
+  }
+  .meta {
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .display {
+    font-family: var(--font-content);
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+  }
+  .title {
+    font-family: var(--font-content);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    margin: 0;
+  }
+  .score-num {
+    font-family: var(--font-content);
+    font-size: 56px;
+    line-height: 60px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 8px 0 16px;
+  }
+  #stage { animation: fadein 160ms ease-out; }
+  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    margin-bottom: 16px;
+  }
+  .topbar .deck-name {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-content);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .topbar .count {
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+  .topbar-stack { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+
+  button.btn, button.back, button.choice {
+    font-family: var(--font-chrome);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  button.btn {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: var(--wine);
+    color: var(--card);
+  }
+  button.btn:hover { background: var(--wine-deep); }
+  button.btn:active { transform: translateY(1px); }
+  button.btn:focus-visible,
+  button.back:focus-visible,
+  button.link:focus-visible,
+  button.choice:focus-visible,
+  .flip-scene:focus-visible,
+  input:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  button.btn.secondary {
+    background: transparent;
+    color: var(--wine);
+    border: 1px solid var(--wine);
+  }
+  button.btn.secondary:hover { background: var(--wine-soft); }
+  button.btn.ghost {
+    background: transparent;
+    color: var(--ink-muted);
+    border: 0;
+  }
+  button.btn.ghost:hover { color: var(--ink); background: transparent; }
+  button.btn.unknown {
+    background: transparent;
+    color: var(--unknown);
+    border: 1px solid var(--unknown);
+  }
+  button.btn.unknown:hover { background: var(--unknown-bg); }
+  button.btn:disabled { cursor: default; transform: none; }
+  button.btn:disabled:not(.ghost) { opacity: 0.45; }
+  button.btn.ghost:disabled {
+    color: var(--ink-faint);
+    background: transparent;
+    opacity: 1;
+  }
+  button.back {
+    background: transparent;
+    border: 0;
+    color: var(--wine);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px 8px 12px 0;
+    text-align: left;
+  }
+  button.back:active { transform: translateY(1px); }
+
+  .progress {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--paper-deep);
+    overflow: hidden;
+  }
+  .deck-row .progress {
+    background: var(--rule);
+  }
+  .progress > i {
+    display: block;
+    height: 100%;
+    background: var(--wine);
+    border-radius: 2px;
+    width: 0;
+    transition: width 200ms ease-out;
+  }
+
+  .deck-list { display: flex; flex-direction: column; gap: 16px; padding-bottom: 72px; }
+  .deck-row {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+  }
+  .deck-row:hover { background: var(--card-raised); }
+  .deck-row:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .deck-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .deck-head h2 {
+    font-family: var(--font-content);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    margin: 0;
+  }
+  .deck-frac {
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+  .deck-head-side {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .meta-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 8px 0 12px;
+  }
+  .deck-row .meta { margin: 0; }
+  .deck-row .progress { margin-bottom: 0; }
+  button.link {
+    font-family: var(--font-chrome);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--wine);
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  button.link:hover { color: var(--wine-deep); }
+
+  .flip-scene {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    height: auto;
+    max-height: min(420px, calc(100vh - 200px));
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    display: block;
+    overflow: hidden;
+  }
+  .flip-card {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+  }
+  .face {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 24px;
+    transition: opacity 180ms ease-out;
+  }
+  .face.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 220px;
+    opacity: 1;
+  }
+  .face.front .term {
+    font-family: var(--font-content);
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+  }
+  .face.back {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    overflow-y: auto;
+    pointer-events: none;
+  }
+  .flip-card.is-flipped .face.front {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .flip-card.is-flipped .face.back {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    pointer-events: auto;
+    min-height: 220px;
+    max-height: min(420px, calc(100vh - 200px));
+  }
+  .face.back .def {
+    font-family: var(--font-content);
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    text-align: left;
+  }
+  .face.back .hint {
+    margin-top: 16px;
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .tap-hint {
+    margin-top: 16px;
+    text-align: center;
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .stem {
+    font-family: var(--font-content);
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0 0 16px;
+    padding: 16px 0 0;
+  }
+  .choices { display: flex; flex-direction: column; gap: 8px; }
+  button.choice {
+    width: 100%;
+    min-height: 48px;
+    height: auto;
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: var(--font-content);
+    color: var(--ink);
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  button.choice:hover:not(:disabled) { background: var(--card-raised); }
+  button.choice:disabled { cursor: default; }
+  button.choice.correct {
+    background: var(--known-bg);
+    border-color: var(--rule);
+    box-shadow: inset 3px 0 0 var(--known);
+  }
+  button.choice.miss {
+    background: var(--unknown-bg);
+    border-color: var(--rule);
+    box-shadow: inset 3px 0 0 var(--unknown);
+  }
+  .grade-word {
+    display: block;
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  button.choice.correct .grade-word { color: var(--known); }
+  button.choice.miss .grade-word { color: var(--unknown); }
+
+  .short-block { display: flex; flex-direction: column; gap: 12px; }
+  input[type="text"] {
+    width: 100%;
+    min-height: 48px;
+    font-family: var(--font-content);
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    background: var(--card-raised);
+    color: var(--ink);
+  }
+  .grade-banner {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .grade-banner.ok {
+    background: var(--known-bg);
+    box-shadow: inset 3px 0 0 var(--known);
+  }
+  .grade-banner.bad {
+    background: var(--unknown-bg);
+    box-shadow: inset 3px 0 0 var(--unknown);
+  }
+  .grade-banner .grade-word { margin-bottom: 8px; }
+  .grade-banner.ok .grade-word { color: var(--known); }
+  .grade-banner.bad .grade-word { color: var(--unknown); }
+
+  .score-wrap { text-align: center; padding: 32px 8px 16px; }
+  .score-ghost { text-align: center; margin: 0; }
+  .score-wrap .review-line {
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--ink-muted);
+    margin: 0 0 24px;
+  }
+
+  .thumb {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 88px;
+    display: none;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+  body.has-thumb .thumb { display: flex; }
+  .thumb .btn { flex: 1; }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #stage { animation: none; }
+    .face { transition: none; }
+    .progress > i { transition: none; }
+    .flip-card.is-flipped .face.front { display: none; }
+    .flip-card:not(.is-flipped) .face.back { display: none; }
+    button.btn:active, button.back:active { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div id="stage"></div>
+</div>
+<div class="thumb" id="thumb" hidden></div>
+<div class="sr-only" id="live" aria-live="polite"></div>
+
+<script type="application/json" id="decks-data">
+[
+  {
+    "id": "sat-core",
+    "title": "SAT",
+    "chapter": 1,
+    "section": 1,
+    "blurb": "Grid headings and the scales you must use.",
+    "cards": [
+      {
+        "id": "sat-appearance",
+        "term": "Appearance",
+        "definition": "Assess clarity, intensity, and colour. Note bubbles or sediment if present."
+      },
+      {
+        "id": "sat-nose",
+        "term": "Nose",
+        "definition": "Assess condition, intensity, and aroma characteristics. Identify faults before describing fruit."
+      },
+      {
+        "id": "sat-palate",
+        "term": "Palate",
+        "definition": "Record sweetness, acidity, tannin, alcohol, body, flavour intensity, flavour characteristics, and finish."
+      },
+      {
+        "id": "sat-conclusions",
+        "term": "Conclusions",
+        "definition": "State quality level and readiness for drinking / ageing potential."
+      },
+      {
+        "id": "sat-clarity",
+        "term": "Clarity",
+        "definition": "Clear or hazy. Haze may be a fault or acceptable in an unfiltered wine."
+      },
+      {
+        "id": "sat-colour-intensity",
+        "term": "Colour intensity",
+        "definition": "Depth of colour on appearance: pale, medium, or deep."
+      },
+      {
+        "id": "sat-aroma-intensity",
+        "term": "Aroma / flavour intensity",
+        "definition": "Light, medium(−), medium, medium(+), or pronounced. Not the same scale as colour intensity."
+      },
+      {
+        "id": "sat-finish",
+        "term": "Finish",
+        "definition": "How long flavour lasts after the wine is spat or swallowed: short, medium(−/+/none), or long."
+      },
+      {
+        "id": "sat-quality",
+        "term": "Quality",
+        "definition": "Judged from balance, length, intensity, and complexity. Not personal liking."
+      },
+      {
+        "id": "sat-readiness",
+        "term": "Readiness",
+        "definition": "Too young; can drink now but has potential for ageing; drink now, not suitable for ageing; or too old."
+      },
+      {
+        "id": "sat-scale",
+        "term": "Hyphenated SAT scale",
+        "definition": "Choose one term from the row. Do not write a range."
+      },
+      {
+        "id": "sat-faults",
+        "term": "Faults",
+        "definition": "If cork taint, oxidation, reduction, or volatile acidity dominate, name the fault and the wine is faulty."
+      },
+      {
+        "id": "sat-structure",
+        "term": "Structural components",
+        "definition": "Sweetness, acidity, tannin, alcohol, and body. These frame flavour and drive conclusions."
+      }
+    ]
+  },
+  {
+    "id": "vine-climate",
+    "title": "Vine and climate",
+    "chapter": 4,
+    "section": 5,
+    "blurb": "Plant, heat, and the growing season.",
+    "cards": [
+      {
+        "id": "vc-vinifera",
+        "term": "Vitis vinifera",
+        "definition": "The species used for almost all wine production."
+      },
+      {
+        "id": "vc-phylloxera",
+        "term": "Phylloxera",
+        "definition": "A root-feeding insect that kills vinifera on its own roots. Control is grafting onto resistant rootstocks."
+      },
+      {
+        "id": "vc-rootstock",
+        "term": "Rootstock",
+        "definition": "Usually a non-vinifera or hybrid root. Chosen for phylloxera resistance, soil, and vigour."
+      },
+      {
+        "id": "vc-photosynthesis",
+        "term": "Photosynthesis",
+        "definition": "Leaves convert sunlight to sugar. Sugar ripens fruit and later ferments to alcohol."
+      },
+      {
+        "id": "vc-climate",
+        "term": "Climate",
+        "definition": "The long-term temperature, rainfall, and sunlight pattern of a region. It decides which grapes can ripen."
+      },
+      {
+        "id": "vc-weather",
+        "term": "Weather",
+        "definition": "Conditions in a given year. The main cause of vintage variation."
+      },
+      {
+        "id": "vc-cool",
+        "term": "Cool climate",
+        "definition": "Growing-season mean about 16.5°C or below. Higher acidity, lighter body, if the fruit still ripens."
+      },
+      {
+        "id": "vc-moderate",
+        "term": "Moderate climate",
+        "definition": "Growing-season mean about 16.5–18.5°C. Many classic European still-wine regions sit here."
+      },
+      {
+        "id": "vc-warm",
+        "term": "Warm climate",
+        "definition": "Growing-season mean about 18.5–21°C. Riper fruit, higher alcohol, lower acidity, fuller body."
+      },
+      {
+        "id": "vc-diurnal",
+        "term": "Diurnal range",
+        "definition": "Gap between daytime and night-time temperature. Cool nights slow acid loss while days still ripen flavour."
+      },
+      {
+        "id": "vc-continentality",
+        "term": "Continentality",
+        "definition": "Gap between the hottest and coldest months. Continental sites have a shorter, more intense growing season."
+      },
+      {
+        "id": "vc-frost",
+        "term": "Spring frost",
+        "definition": "Can kill bursting buds and wipe the crop. Site, late pruning, and frost protection are the usual responses."
+      },
+      {
+        "id": "vc-water",
+        "term": "Water",
+        "definition": "Needed for photosynthesis and growth. Too little stops ripening; too much dilutes fruit and raises disease pressure."
+      }
+    ]
+  },
+  {
+    "id": "vineyard",
+    "title": "Vineyard management",
+    "chapter": 6,
+    "section": 1,
+    "blurb": "Training, yield, and canopy.",
+    "cards": [
+      {
+        "id": "vy-training",
+        "term": "Training",
+        "definition": "The permanent shape of the vine on a trellis or as a free-standing bush."
+      },
+      {
+        "id": "vy-pruning",
+        "term": "Pruning",
+        "definition": "The annual cut that sets bud number and therefore this year's potential yield."
+      },
+      {
+        "id": "vy-canopy",
+        "term": "Canopy management",
+        "definition": "Arranging leaves and bunches for light, airflow, and even ripening, and to limit disease."
+      },
+      {
+        "id": "vy-yield",
+        "term": "Yield",
+        "definition": "Crop size, usually tonnes/ha or hl/ha. High yield can dilute flavour; very low yield can delay ripening."
+      },
+      {
+        "id": "vy-irrigation",
+        "term": "Irrigation",
+        "definition": "Applied water. Common in dry climates; restricted or banned in many European appellations."
+      },
+      {
+        "id": "vy-vsp",
+        "term": "VSP",
+        "definition": "Vertical shoot positioning: shoots trained upright into a thin curtain of leaves."
+      },
+      {
+        "id": "vy-gobelet",
+        "term": "Gobelet (bush vine)",
+        "definition": "Untrained or minimally trained, no high trellis. Used in hot, dry, or windy sites and for old vines."
+      },
+      {
+        "id": "vy-green",
+        "term": "Green harvesting",
+        "definition": "Removing some unripe bunches so remaining fruit can ripen more fully."
+      },
+      {
+        "id": "vy-harvest",
+        "term": "Harvest timing",
+        "definition": "The last vineyard decision. It fixes sugar, acid, tannin ripeness, and flavour."
+      },
+      {
+        "id": "vy-organic",
+        "term": "Organic viticulture",
+        "definition": "Certified limits on synthetic herbicides, insecticides, and fertilisers. It does not by itself define wine style."
+      },
+      {
+        "id": "vy-biodynamic",
+        "term": "Biodynamic viticulture",
+        "definition": "Organic rules plus specified preparations and a farm as a closed system. Again, not a style guarantee."
+      },
+      {
+        "id": "vy-density",
+        "term": "Planting density",
+        "definition": "Vines per hectare. Higher density often means more competition, lower yield per vine, and a need for more labour."
+      }
+    ]
+  },
+  {
+    "id": "winery",
+    "title": "Winemaking",
+    "chapter": 7,
+    "section": 9,
+    "blurb": "Shared cellar options, then colour.",
+    "cards": [
+      {
+        "id": "wy-crush",
+        "term": "Crushing and pressing",
+        "definition": "Crushing splits berries. Pressing separates juice or wine from skins and seeds."
+      },
+      {
+        "id": "wy-inoculated",
+        "term": "Cultured yeast",
+        "definition": "Selected Saccharomyces inoculated for a reliable, complete ferment."
+      },
+      {
+        "id": "wy-ambient",
+        "term": "Ambient yeast",
+        "definition": "Yeast already on grapes or in the winery. Less control; can add complexity or risk a stuck ferment."
+      },
+      {
+        "id": "wy-temp-white",
+        "term": "White ferment temperature",
+        "definition": "Typically cool (about 12–22°C) to retain fresh fruit aromas."
+      },
+      {
+        "id": "wy-temp-red",
+        "term": "Red ferment temperature",
+        "definition": "Typically warmer (about 20–32°C) to extract colour, tannin, and flavour from skins."
+      },
+      {
+        "id": "wy-mlf",
+        "term": "Malolactic conversion",
+        "definition": "Lactic acid bacteria convert malic acid to lactic acid. Standard for most reds; optional for whites. Softens acidity and can add buttery notes if diacetyl is present."
+      },
+      {
+        "id": "wy-lees",
+        "term": "Lees",
+        "definition": "Dead yeast cells. Ageing on lees can add body and flavour; bâtonnage (stirring) increases contact."
+      },
+      {
+        "id": "wy-oak",
+        "term": "Oak vessels",
+        "definition": "Allow slow oxygen ingress and can add flavour (vanilla, clove, toast). New oak has more flavour than old; small barrels more than large."
+      },
+      {
+        "id": "wy-steel",
+        "term": "Stainless steel",
+        "definition": "Inert, easy to temperature-control, no oak flavour. Used to preserve primary fruit."
+      },
+      {
+        "id": "wy-so2",
+        "term": "Sulfur dioxide (SO2)",
+        "definition": "Antioxidant and antimicrobial. Used from harvest through bottling to protect the wine."
+      },
+      {
+        "id": "wy-maceration",
+        "term": "Maceration",
+        "definition": "Time on skins. For reds this extracts colour, tannin, and flavour; for rosé it is short; for most whites it is little or none."
+      },
+      {
+        "id": "wy-carbonic",
+        "term": "Carbonic maceration",
+        "definition": "Intact berries in a CO2-rich environment. Intracellular fermentation gives low tannin and distinct banana/kirsch fruit. Used especially in Beaujolais."
+      },
+      {
+        "id": "wy-rose",
+        "term": "Rosé production",
+        "definition": "Direct press, short maceration, or (less often, and in some regions only) blending red and white. Saignée is bleeding juice from a red ferment."
+      }
+    ]
+  },
+  {
+    "id": "law",
+    "title": "Wine law",
+    "chapter": 11,
+    "section": 1,
+    "blurb": "PDO, PGI, and what a label may claim.",
+    "cards": [
+      {
+        "id": "law-pdo",
+        "term": "PDO",
+        "definition": "Protected Designation of Origin. The stricter EU geographic category: smaller area, defined grapes and production."
+      },
+      {
+        "id": "law-pgi",
+        "term": "PGI",
+        "definition": "Protected Geographical Indication. Broader area and more flexible grape and winemaking rules than PDO."
+      },
+      {
+        "id": "law-gi",
+        "term": "GI",
+        "definition": "Geographic indication outside the EU PDO/PGI ladder. Often defines place more than recipe."
+      },
+      {
+        "id": "law-aoc",
+        "term": "AOC / DOCG / DO",
+        "definition": "National names that sit inside PDO (France AOC/AOP, Italy DOCG/DOC, Spain DO/DOCa)."
+      },
+      {
+        "id": "law-variety-label",
+        "term": "Variety labelling",
+        "definition": "Common on New World labels. EU PDO wines often omit variety because the place implies it."
+      },
+      {
+        "id": "law-reserve",
+        "term": "Reserva / Reserve",
+        "definition": "Legally defined ageing in some countries (e.g. Spain, Italy). Unregulated marketing language in others."
+      },
+      {
+        "id": "law-chaptalization",
+        "term": "Enrichment (chaptalisation)",
+        "definition": "Adding sugar (or must concentrate) before or during ferment to raise potential alcohol. Allowed in cooler EU zones, restricted or banned in warmer ones."
+      },
+      {
+        "id": "law-acidification",
+        "term": "Acidification",
+        "definition": "Adding acid, usually tartaric. More often permitted in warm regions; rules are specific to the country."
+      },
+      {
+        "id": "law-yield",
+        "term": "Maximum yield",
+        "definition": "Many PDOs cap hl/ha. Lower legal maxima are used as one quality control."
+      },
+      {
+        "id": "law-vintage",
+        "term": "Vintage claim",
+        "definition": "If a vintage is stated, a high percentage of the wine must come from that harvest (exact % is set by law)."
+      },
+      {
+        "id": "law-protected",
+        "term": "Protected traditional terms",
+        "definition": "Names such as Champagne or Port may only be used for wine from that place, in markets that enforce the protection."
+      },
+      {
+        "id": "law-sulfites",
+        "term": "Contains sulfites",
+        "definition": "A common mandatory allergen-style statement when SO2 is above the legal threshold."
+      }
+    ]
+  }
+]
+</script>
+<script>
+(function () {
+  const DECKS = JSON.parse(document.getElementById("decks-data").textContent);
+  const LS_KEY = "wset-l3-quizlet-v2";
+  const stage = document.getElementById("stage");
+  const thumb = document.getElementById("thumb");
+  const live = document.getElementById("live");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const state = {
+    view: "home",
+    deckId: null,
+    cardIndex: 0,
+    flipped: false,
+    hinted: false,
+    quiz: null,
+    filterIds: null
+  };
+
+  function announce(msg) { live.textContent = ""; live.textContent = msg; }
+
+  function unitTag(d) {
+    if (d.id === "vine-climate") return "Unit 4–5";
+    if (d.id === "winery") return "Unit 7–9";
+    return "Unit " + d.chapter;
+  }
+
+  function loadP() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return { decks: {} };
+      const p = JSON.parse(raw);
+      if (!p || typeof p !== "object" || !p.decks) return { decks: {} };
+      return p;
+    } catch (e) {
+      return { decks: {} };
+    }
+  }
+  function saveP(p) {
+    localStorage.setItem(LS_KEY, JSON.stringify(p));
+  }
+  function deckProg(id) {
+    const p = loadP();
+    return p.decks[id] || { cards: {}, lastQuiz: null };
+  }
+  function setCardStatus(deckId, cardId, status) {
+    const p = loadP();
+    if (!p.decks[deckId]) p.decks[deckId] = { cards: {}, lastQuiz: null };
+    p.decks[deckId].cards[cardId] = { status: status };
+    saveP(p);
+  }
+  function setLastQuiz(deckId, correct, total) {
+    const p = loadP();
+    if (!p.decks[deckId]) p.decks[deckId] = { cards: {}, lastQuiz: null };
+    p.decks[deckId].lastQuiz = { correct: correct, total: total, at: Date.now() };
+    saveP(p);
+  }
+  function resetDeck(deckId) {
+    const p = loadP();
+    delete p.decks[deckId];
+    saveP(p);
+  }
+  function mastery(deck) {
+    const cards = deckProg(deck.id).cards || {};
+    let known = 0;
+    deck.cards.forEach(function (c) {
+      if (cards[c.id] && cards[c.id].status === "known") known += 1;
+    });
+    return { known: known, total: deck.cards.length };
+  }
+
+  function findDeck(id) {
+    for (let i = 0; i < DECKS.length; i++) if (DECKS[i].id === id) return DECKS[i];
+    return null;
+  }
+
+  function sessionCards(deck) {
+    const cards = deck.cards;
+    if (!state.filterIds || !state.filterIds.length) return cards;
+    const set = {};
+    state.filterIds.forEach(function (id) { set[id] = true; });
+    return cards.filter(function (c) { return set[c.id]; });
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function sittingSize(n) {
+    if (n <= 12) return n;
+    return 12;
+  }
+
+  function buildQuiz(deck, onlyIds) {
+    let pool = deck.cards.slice();
+    if (onlyIds && onlyIds.length) {
+      const set = {};
+      onlyIds.forEach(function (id) { set[id] = true; });
+      pool = pool.filter(function (c) { return set[c.id]; });
+    }
+    const n = sittingSize(pool.length);
+    const picked = shuffle(pool).slice(0, n);
+    return picked.map(function (card) {
+      const others = shuffle(deck.cards.filter(function (c) { return c.id !== card.id; })).slice(0, 3);
+      const choices = shuffle([card.definition].concat(others.map(function (c) { return c.definition; })));
+      return {
+        cardId: card.id,
+        term: card.term,
+        definition: card.definition,
+        hint: card.hint || "",
+        type: "mcq",
+        choices: choices,
+        pick: null,
+        graded: false,
+        ok: false
+      };
+    });
+  }
+
+  function setThumb(html, handlers) {
+    if (!html) {
+      thumb.hidden = true;
+      thumb.innerHTML = "";
+      document.body.classList.remove("has-thumb");
+      return;
+    }
+    thumb.hidden = false;
+    document.body.classList.add("has-thumb");
+    thumb.innerHTML = html;
+    if (handlers) {
+      Object.keys(handlers).forEach(function (id) {
+        const el = document.getElementById(id);
+        if (el) el.onclick = handlers[id];
+      });
+    }
+  }
+
+  function paint() {
+    if (!reduceMotion) {
+      stage.style.animation = "none";
+      void stage.offsetWidth;
+      stage.style.animation = "";
+    }
+    if (state.view === "home") renderHome();
+    else if (state.view === "cards") renderCards();
+    else if (state.view === "done") renderDone();
+    else if (state.view === "quiz") renderQuiz();
+    else if (state.view === "score") renderScore();
+  }
+
+  function goHome() {
+    state.view = "home";
+    state.deckId = null;
+    state.quiz = null;
+    state.flipped = false;
+    state.filterIds = null;
+    paint();
+  }
+
+  function openCards(deckId, onlyIds) {
+    state.view = "cards";
+    state.deckId = deckId;
+    state.cardIndex = 0;
+    state.flipped = false;
+    state.hinted = false;
+    state.filterIds = onlyIds && onlyIds.length ? onlyIds.slice() : null;
+    paint();
+  }
+
+  function openQuiz(deckId, onlyIds) {
+    const deck = findDeck(deckId);
+    state.view = "quiz";
+    state.deckId = deckId;
+    state.quiz = {
+      items: buildQuiz(deck, onlyIds),
+      i: 0
+    };
+    paint();
+  }
+
+  function renderHome() {
+    setThumb("");
+    let html = '<p class="meta">WSET Level 3</p>';
+    html += '<h1 class="display">Study</h1>';
+    html += '<div class="deck-list">';
+    DECKS.forEach(function (d) {
+      const m = mastery(d);
+      const pct = m.total ? Math.round(100 * m.known / m.total) : 0;
+      const dp = deckProg(d.id);
+      const hasProg = m.known > 0 || (dp.cards && Object.keys(dp.cards).length) || dp.lastQuiz;
+      html += '<article class="deck-row" tabindex="0" data-deck="' + escapeHtml(d.id) + '" role="button" aria-label="' + escapeHtml(d.title) + ', flashcards">';
+      html += '<div class="deck-head"><h2>' + escapeHtml(d.title) + '</h2>';
+      html += '<div class="deck-head-side"><div class="deck-frac">' + m.known + "/" + m.total + "</div>";
+      html += '<button type="button" class="link" data-quiz="' + escapeHtml(d.id) + '">Quiz</button></div></div>';
+      html += '<div class="meta-row"><div class="meta">' + escapeHtml(unitTag(d)) + " · " + d.cards.length + " cards</div>";
+      if (hasProg) {
+        html += '<button type="button" class="link" data-reset="' + escapeHtml(d.id) + '">Reset</button>';
+      }
+      html += "</div>";
+      html += '<div class="progress" aria-hidden="true"><i style="width:' + pct + '%"></i></div>';
+      html += "</article>";
+    });
+    html += "</div>";
+    stage.innerHTML = html;
+
+    stage.querySelectorAll(".deck-row").forEach(function (row) {
+      function open() { openCards(row.getAttribute("data-deck")); }
+      row.addEventListener("click", function (e) {
+        if (e.target.closest("button")) return;
+        open();
+      });
+      row.addEventListener("keydown", function (e) {
+        if (e.target !== row) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open();
+        }
+      });
+    });
+    stage.querySelectorAll("[data-quiz]").forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.stopPropagation();
+        openQuiz(btn.getAttribute("data-quiz"));
+      };
+    });
+    stage.querySelectorAll("[data-reset]").forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.stopPropagation();
+        resetDeck(btn.getAttribute("data-reset"));
+        paint();
+      };
+    });
+  }
+
+  function renderCards() {
+    const deck = findDeck(state.deckId);
+    const cards = sessionCards(deck);
+    const card = cards[state.cardIndex];
+    const n = cards.length;
+    const i = state.cardIndex + 1;
+
+    let html = '<div class="topbar">';
+    html += '<button type="button" class="back" id="go-back">Back</button>';
+    html += '<div class="deck-name">' + escapeHtml(deck.title) + "</div>";
+    html += '<div class="count">' + i + " / " + n + "</div>";
+    html += "</div>";
+
+    html += '<button type="button" class="flip-scene" id="flip" aria-label="Flashcard, ' + (state.flipped ? "answer shown" : "term") + '">';
+    html += '<div class="flip-card' + (state.flipped ? " is-flipped" : "") + '">';
+    html += '<div class="face front"><div class="term">' + escapeHtml(card.term) + "</div></div>";
+    html += '<div class="face back"><div class="def">' + escapeHtml(card.definition) + "</div>";
+    if (card.hint) html += '<div class="hint">' + escapeHtml(card.hint) + "</div>";
+    html += "</div></div></button>";
+
+    if (!state.flipped && !state.hinted) {
+      html += '<p class="tap-hint">Tap to show answer</p>';
+    }
+
+    stage.innerHTML = html;
+    document.getElementById("go-back").onclick = goHome;
+    document.getElementById("flip").onclick = function () { flipCard(); };
+
+    if (state.flipped) {
+      setThumb(
+        '<button type="button" class="btn unknown" id="still">Still learning</button>' +
+        '<button type="button" class="btn secondary" id="know">Know it</button>',
+        { still: function () { mark("learning"); }, know: function () { mark("known"); } }
+      );
+    } else {
+      setThumb("");
+    }
+  }
+
+  function flipCard() {
+    if (state.view !== "cards" || state.flipped) return;
+    state.flipped = true;
+    state.hinted = true;
+    announce("Answer shown");
+    const cardEl = document.querySelector(".flip-card");
+    if (cardEl) cardEl.classList.add("is-flipped");
+    const hint = document.querySelector(".tap-hint");
+    if (hint) hint.remove();
+    const scene = document.getElementById("flip");
+    if (scene) scene.setAttribute("aria-label", "Flashcard, answer shown");
+    setThumb(
+      '<button type="button" class="btn unknown" id="still">Still learning</button>' +
+      '<button type="button" class="btn secondary" id="know">Know it</button>',
+      { still: function () { mark("learning"); }, know: function () { mark("known"); } }
+    );
+  }
+
+  function mark(status) {
+    const deck = findDeck(state.deckId);
+    const cards = sessionCards(deck);
+    const card = cards[state.cardIndex];
+    setCardStatus(deck.id, card.id, status);
+    if (state.cardIndex < cards.length - 1) {
+      state.cardIndex += 1;
+      state.flipped = false;
+      state.hinted = false;
+      paint();
+    } else {
+      state.view = "done";
+      state.flipped = false;
+      paint();
+    }
+  }
+
+  function renderDone() {
+    const deck = findDeck(state.deckId);
+    setThumb("");
+    let html = '<div class="topbar">';
+    html += '<button type="button" class="back" id="go-back">Back</button>';
+    html += '<div class="deck-name">' + escapeHtml(deck.title) + "</div>";
+    html += "</div>";
+    html += '<div class="score-wrap">';
+    html += '<p class="display">Deck done</p>';
+    html += "</div>";
+    html += '<button type="button" class="btn" id="quiz-deck">Quiz this deck</button>';
+    html += '<p class="score-ghost"><button type="button" class="btn ghost" id="home">Back to decks</button></p>';
+    stage.innerHTML = html;
+    document.getElementById("go-back").onclick = goHome;
+    document.getElementById("quiz-deck").onclick = function () { openQuiz(deck.id); };
+    document.getElementById("home").onclick = goHome;
+  }
+
+  function renderQuiz() {
+    const deck = findDeck(state.deckId);
+    const q = state.quiz;
+    const item = q.items[q.i];
+    const last = q.i === q.items.length - 1;
+    const pct = Math.round((q.i / q.items.length) * 100);
+
+    let html = '<div class="topbar-stack">';
+    html += '<div class="topbar">';
+    html += '<button type="button" class="back" id="go-back">Back</button>';
+    html += '<div class="deck-name">Quiz · ' + escapeHtml(deck.title) + "</div>";
+    html += '<div class="count">' + (q.i + 1) + " / " + q.items.length + "</div>";
+    html += "</div>";
+    html += '<div class="progress" aria-hidden="true"><i style="width:' + (item.graded ? Math.round(((q.i + 1) / q.items.length) * 100) : pct) + '%"></i></div>';
+    html += "</div>";
+
+    html += '<p class="stem">' + escapeHtml(item.term) + "</p>";
+
+    html += '<div class="choices">';
+    item.choices.forEach(function (c) {
+      let cls = "choice";
+      let word = "";
+      if (item.graded) {
+        if (c === item.definition) { cls += " correct"; word = "Correct"; }
+        else if (c === item.pick) { cls += " miss"; word = "Miss"; }
+      }
+      html += '<button type="button" class="' + cls + '" data-choice="' + escapeHtml(c) + '"' + (item.graded ? " disabled" : "") + ">";
+      if (word) html += '<span class="grade-word">' + word + "</span>";
+      html += escapeHtml(c) + "</button>";
+    });
+    html += "</div>";
+
+    stage.innerHTML = html;
+    document.getElementById("go-back").onclick = goHome;
+
+    if (!item.graded) {
+      stage.querySelectorAll("button.choice").forEach(function (btn) {
+        btn.onclick = function () { gradeMcq(btn.getAttribute("data-choice")); };
+      });
+    }
+
+    const nextLabel = last ? "See score" : "Next";
+    const nextCls = item.graded ? "btn" : "btn ghost";
+    setThumb(
+      '<button type="button" class="btn ghost" id="prevq"' + (q.i === 0 ? " disabled" : "") + ">Previous</button>" +
+      '<button type="button" class="' + nextCls + '" id="nextq"' + (item.graded ? "" : " disabled") + ">" + nextLabel + "</button>",
+      { prevq: prevQuestion, nextq: nextQuestion }
+    );
+  }
+
+  function gradeMcq(pick) {
+    const item = state.quiz.items[state.quiz.i];
+    if (item.graded) return;
+    item.pick = pick;
+    item.ok = pick === item.definition;
+    item.graded = true;
+    announce(item.ok ? "Correct" : "Miss");
+    paint();
+  }
+
+  function prevQuestion() {
+    const q = state.quiz;
+    if (!q || q.i <= 0) return;
+    q.i -= 1;
+    paint();
+  }
+
+  function nextQuestion() {
+    const q = state.quiz;
+    if (!q) return;
+    const item = q.items[q.i];
+    if (!item.graded) return;
+    if (q.i < q.items.length - 1) {
+      q.i += 1;
+      paint();
+    } else {
+      finishQuiz();
+    }
+  }
+
+  function finishQuiz() {
+    const items = state.quiz.items;
+    let correct = 0;
+    const missed = [];
+    items.forEach(function (it) {
+      if (it.ok) correct += 1;
+      else missed.push(it.cardId);
+    });
+    setLastQuiz(state.deckId, correct, items.length);
+    state.view = "score";
+    state.quiz.correct = correct;
+    state.quiz.missed = missed;
+    paint();
+  }
+
+  function renderScore() {
+    const q = state.quiz;
+    const total = q.items.length;
+    const correct = q.correct;
+    const pct = total ? Math.round(100 * correct / total) : 0;
+    const missN = q.missed.length;
+
+    let html = '<div class="score-wrap">';
+    html += '<p class="display">' + correct + " of " + total + "</p>";
+    html += '<div class="score-num">' + pct + "%</div>";
+    html += '<p class="review-line">' + missN + " to review</p>";
+    html += "</div>";
+    stage.innerHTML = html;
+
+    let htmlScore = stage.innerHTML;
+    htmlScore += '<p class="score-ghost"><button type="button" class="btn ghost" id="home">Back to decks</button></p>';
+    stage.innerHTML = htmlScore;
+    document.getElementById("home").onclick = goHome;
+
+    let thumbs = "";
+    const handlers = {};
+    if (missN) {
+      thumbs += '<button type="button" class="btn" id="review">Review misses</button>';
+      handlers.review = function () { openCards(state.deckId, q.missed); };
+    }
+    thumbs += '<button type="button" class="btn' + (missN ? " secondary" : "") + '" id="again">Quiz again</button>';
+    handlers.again = function () { openQuiz(state.deckId); };
+    setThumb(thumbs, handlers);
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    const tag = (e.target && e.target.tagName) || "";
+    const inField = tag === "INPUT" || tag === "TEXTAREA";
+
+    if (state.view === "cards") {
+      if (e.key === " " || e.key === "Enter") {
+        if (inField) return;
+        e.preventDefault();
+        if (!state.flipped) flipCard();
+        return;
+      }
+      if ((e.key === "ArrowLeft" || e.key === "Left") && !inField && state.cardIndex > 0) {
+        e.preventDefault();
+        state.cardIndex -= 1;
+        state.flipped = false;
+        state.hinted = false;
+        paint();
+        return;
+      }
+      if (state.flipped && (e.key === "1" || e.key === "2")) {
+        e.preventDefault();
+        mark(e.key === "1" ? "learning" : "known");
+      }
+      return;
+    }
+
+    if (state.view === "quiz" && state.quiz) {
+      const item = state.quiz.items[state.quiz.i];
+      if (!item.graded && !inField && /^[1-4]$/.test(e.key)) {
+        const idx = parseInt(e.key, 10) - 1;
+        if (item.choices[idx]) {
+          e.preventDefault();
+          gradeMcq(item.choices[idx]);
+        }
+        return;
+      }
+      if (e.key === "Enter" && item.graded) {
+        e.preventDefault();
+        nextQuestion();
+        return;
+      }
+      if ((e.key === "ArrowLeft" || e.key === "Left") && !inField) {
+        e.preventDefault();
+        prevQuestion();
+      }
+    }
+  });
+
+  paint();
+})();
+</script>
+</body>
+</html>
