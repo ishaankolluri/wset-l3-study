@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Practice exams — WSET L3 Study</title>
+<style>
+  :root {
+    --paper: #f3ece1;
+    --paper-deep: #e8dcc8;
+    --card: #fbf6ee;
+    --card-raised: #fffdf8;
+    --ink: #2a2218;
+    --ink-muted: #6b5e50;
+    --ink-faint: #9a8c7a;
+    --rule: #d4c6b0;
+    --wine: #7a2e32;
+    --wine-deep: #5c2226;
+    --wine-soft: #f0ddd8;
+    --known: #3d5344;
+    --known-bg: #e4ebe4;
+    --unknown: #8a4a32;
+    --unknown-bg: #f3e4d8;
+    --focus: #7a2e32;
+    --shadow: 0 1px 2px rgba(42,34,24,0.06), 0 8px 24px rgba(42,34,24,0.06);
+    --font-content: Palatino Linotype, Palatino, "Iowan Old Style", Georgia, "Times New Roman", serif;
+    --font-chrome: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  body {
+    font-family: var(--font-content);
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    min-width: 360px;
+    line-height: 24px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .app {
+    width: 100%;
+    max-width: 720px;
+    min-width: 360px;
+    margin: 0 auto;
+    padding: 16px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-top: max(16px, env(safe-area-inset-top, 0px));
+  }
+  @media (min-width: 720px) {
+    .app { padding: 24px; padding-top: max(24px, env(safe-area-inset-top, 0px)); }
+  }
+  body.sheet .app {
+    max-width: 800px;
+    padding-top: 0;
+  }
+  .meta {
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .display {
+    font-family: var(--font-content);
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+  }
+  .title {
+    font-family: var(--font-content);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    margin: 0;
+  }
+  .score-num {
+    font-family: var(--font-content);
+    font-size: 56px;
+    line-height: 60px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 8px 0 16px;
+  }
+  .lede {
+    color: var(--ink-muted);
+    margin: 0 0 24px;
+  }
+  a.exam-link, a.text-link {
+    font-family: var(--font-chrome);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--wine);
+    text-decoration: none;
+  }
+  a.exam-link:hover, a.text-link:hover { color: var(--wine-deep); }
+  a.exam-link:focus-visible, a.text-link:focus-visible,
+  button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  .home-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .home-head .display { margin: 0; }
+  .paper-list { display: flex; flex-direction: column; gap: 16px; padding-bottom: 48px; }
+  .paper-row {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font: inherit;
+    color: inherit;
+  }
+  .paper-row:hover { background: var(--card-raised); }
+  .paper-row h2 {
+    font-family: var(--font-content);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+  .paper-row .meta { margin: 0; }
+
+  button.btn, button.back {
+    font-family: var(--font-chrome);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  button.btn {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: var(--wine);
+    color: var(--card);
+  }
+  button.btn:hover { background: var(--wine-deep); }
+  button.btn:active { transform: translateY(1px); }
+  button.btn.secondary {
+    background: transparent;
+    color: var(--wine);
+    border: 1px solid var(--wine);
+  }
+  button.btn.secondary:hover { background: var(--wine-soft); }
+  button.btn.ghost {
+    background: transparent;
+    color: var(--ink-muted);
+    border: 0;
+  }
+  button.btn.ghost:hover { color: var(--ink); }
+  button.btn:disabled { cursor: default; transform: none; opacity: 0.45; }
+  button.back {
+    background: transparent;
+    border: 0;
+    color: var(--wine);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px 8px 12px 0;
+    text-align: left;
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    margin: 0 -16px 16px;
+    padding: 8px 16px;
+    padding-top: max(8px, env(safe-area-inset-top, 0px));
+  }
+  @media (min-width: 720px) {
+    .sticky { margin: 0 -24px 16px; padding-left: 24px; padding-right: 24px; }
+  }
+  .sticky-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+  }
+  .sticky .deck-name {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-content);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .timer {
+    font-family: var(--font-chrome);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .timer.low { color: var(--wine); }
+  .timer-sub {
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .intro {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+  .intro p { margin: 0 0 8px; }
+  .intro p:last-child { margin: 0; }
+
+  .qblock {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .qblock .qnum {
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 8px;
+  }
+  .qblock .stem {
+    font-family: var(--font-content);
+    font-size: 17px;
+    line-height: 26px;
+    font-weight: 500;
+    margin: 0 0 12px;
+  }
+  .opts { display: flex; flex-direction: column; gap: 8px; }
+  .opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    text-align: left;
+    background: var(--card-raised);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: var(--font-content);
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .opt:hover { background: #fff; }
+  .opt input {
+    margin-top: 4px;
+    accent-color: var(--wine);
+    flex-shrink: 0;
+  }
+  .opt.picked { box-shadow: inset 3px 0 0 var(--wine); }
+  .opt.correct {
+    background: var(--known-bg);
+    box-shadow: inset 3px 0 0 var(--known);
+  }
+  .opt.miss {
+    background: var(--unknown-bg);
+    box-shadow: inset 3px 0 0 var(--unknown);
+  }
+  .why {
+    margin: 12px 0 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--ink-muted);
+  }
+  .finish-wrap { padding: 16px 0 48px; }
+  .warn {
+    margin: 12px 0 0;
+    color: var(--unknown);
+    font-family: var(--font-chrome);
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .score-wrap { text-align: center; padding: 16px 8px 8px; }
+  .score-wrap .review-line {
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--ink-muted);
+    margin: 0 0 24px;
+  }
+  .pass-yes { color: var(--known); }
+  .pass-no { color: var(--unknown); }
+  .buckets { display: flex; flex-direction: column; gap: 12px; margin: 0 0 32px; }
+  .bucket {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .bucket-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .bucket .bar {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--paper-deep);
+    overflow: hidden;
+    margin-top: 12px;
+  }
+  .bucket .bar > i {
+    display: block;
+    height: 100%;
+    background: var(--wine);
+    border-radius: 2px;
+  }
+  .bucket.weak .bar > i { background: var(--unknown); }
+  .bucket.weak .tag { color: var(--unknown); }
+  .tag {
+    font-family: var(--font-chrome);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .written { margin-top: 16px; padding-bottom: 64px; }
+  .wblock {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .wblock h3 {
+    font-family: var(--font-content);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+  .wpart { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
+  .wpart:first-of-type { border-top: 0; padding-top: 0; }
+  .scheme {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--paper);
+    border-radius: 8px;
+  }
+  .scheme ul { margin: 8px 0 0; padding-left: 1.2em; }
+  .scheme li { margin: 0 0 6px; }
+  .hidden { display: none; }
+  .err { color: var(--unknown); padding: 24px 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    button.btn:active, button.back:active { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+<div class="sr-only" id="live" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)"></div>
+<script>
+(function () {
+  const PAPERS = [
+    ["paper-01", "Practice paper 1"],
+    ["paper-02", "Practice paper 2"],
+    ["paper-03", "Practice paper 3"],
+    ["paper-04", "Practice paper 4"],
+    ["paper-05", "Practice paper 5"],
+    ["paper-06", "Practice paper 6"],
+    ["paper-07", "Practice paper 7"],
+    ["paper-08", "Practice paper 8"],
+    ["paper-09", "Practice paper 9"],
+    ["paper-10", "Practice paper 10"]
+  ];
+  const BUCKETS = [
+    ["vineyard-winery", "Vineyard and winery"],
+    ["still", "Still wines of the world"],
+    ["sparkling", "Sparkling"],
+    ["fortified", "Fortified"],
+    ["advice", "Advice, faults, food and service"]
+  ];
+  const app = document.getElementById("app");
+  const live = document.getElementById("live");
+
+  const state = {
+    view: "home",
+    paper: null,
+    items: null,
+    seconds: 3600,
+    timerId: null,
+    timedOut: false,
+    warn: "",
+    showScheme: {},
+    showReview: false
+  };
+
+  function announce(t) { live.textContent = t; }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
+    });
+  }
+  function stripLetter(s) {
+    return String(s).replace(/^[A-D]\s+/, "");
+  }
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  function letterChoices(texts) {
+    const L = ["A", "B", "C", "D"];
+    return texts.map(function (t, i) { return L[i] + " " + t; });
+  }
+  function fmtTime(sec) {
+    const s = Math.max(0, sec);
+    const m = Math.floor(s / 60);
+    const r = s % 60;
+    return String(m).padStart(2, "0") + ":" + String(r).padStart(2, "0");
+  }
+  function unanswered() {
+    return state.items.filter(function (it) { return !it.pick; }).length;
+  }
+
+  function stopTimer() {
+    if (state.timerId) {
+      clearInterval(state.timerId);
+      state.timerId = null;
+    }
+  }
+  function startTimer() {
+    stopTimer();
+    state.timerId = setInterval(function () {
+      if (state.view !== "sheet") return;
+      state.seconds -= 1;
+      if (state.seconds <= 0) {
+        state.seconds = 0;
+        state.timedOut = true;
+        finish(true);
+        return;
+      }
+      const el = document.getElementById("timer");
+      if (el) {
+        el.textContent = fmtTime(state.seconds);
+        el.classList.toggle("low", state.seconds <= 300);
+      }
+      const sub = document.getElementById("timer-sub");
+      if (sub) sub.textContent = unanswered() + " unanswered";
+    }, 1000);
+  }
+
+  function goHome() {
+    stopTimer();
+    state.view = "home";
+    state.paper = null;
+    state.items = null;
+    state.warn = "";
+    state.showScheme = {};
+    state.showReview = false;
+    state.timedOut = false;
+    paint();
+  }
+
+  function openPaper(id) {
+    state.view = "loading";
+    paint();
+    fetch("./exams/" + id + ".json", { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("Could not load " + id);
+        return r.json();
+      })
+      .then(function (data) {
+        state.paper = data;
+        state.items = data.mcq.map(function (raw) {
+          const texts = raw.choices.map(stripLetter);
+          const key = stripLetter(raw.answer);
+          const shuffled = letterChoices(shuffle(texts));
+          return {
+            id: raw.id,
+            topic: raw.topic,
+            q: raw.q,
+            choices: shuffled,
+            key: key,
+            why: raw.why || "",
+            pick: "",
+            ok: false
+          };
+        });
+        const mins = data.duration_minutes || 60;
+        state.seconds = mins * 60;
+        state.timedOut = false;
+        state.warn = "";
+        state.view = "sheet";
+        paint();
+        startTimer();
+        window.scrollTo(0, 0);
+      })
+      .catch(function (e) {
+        state.view = "error";
+        state.warn = e.message || "Load failed";
+        paint();
+      });
+  }
+
+  function pick(qid, choice) {
+    if (state.view !== "sheet") return;
+    const it = state.items.find(function (x) { return x.id === qid; });
+    if (!it) return;
+    it.pick = stripLetter(choice);
+    const block = document.querySelector('[data-qid="' + qid + '"]');
+    if (block) {
+      block.querySelectorAll(".opt").forEach(function (lab) {
+        const input = lab.querySelector("input");
+        lab.classList.toggle("picked", input && input.value === choice);
+      });
+    }
+    const sub = document.getElementById("timer-sub");
+    if (sub) sub.textContent = unanswered() + " unanswered";
+    if (state.warn) {
+      state.warn = "";
+      const w = document.getElementById("finish-warn");
+      if (w) w.textContent = "";
+    }
+  }
+
+  function finish(fromTimer) {
+    if (state.view !== "sheet") return;
+    const blank = unanswered();
+    if (!fromTimer && blank > 0) {
+      state.warn = "Answer every question before you finish (" + blank + " still blank).";
+      const w = document.getElementById("finish-warn");
+      if (w) w.textContent = state.warn;
+      announce(state.warn);
+      const first = state.items.find(function (it) { return !it.pick; });
+      if (first) {
+        const el = document.querySelector('[data-qid="' + first.id + '"]');
+        if (el) el.scrollIntoView({ block: "center" });
+      }
+      return;
+    }
+    stopTimer();
+    state.items.forEach(function (it) {
+      it.ok = !!it.pick && it.pick === it.key;
+    });
+    state.view = "results";
+    paint();
+    window.scrollTo(0, 0);
+  }
+
+  function renderHome() {
+    document.body.classList.remove("sheet");
+    let html = '<div class="home-head">';
+    html += '<div><p class="meta">WSET Level 3 · Unit 1</p><h1 class="display">Practice exams</h1></div>';
+    html += '<a class="exam-link" href="index.html">Flashcards</a></div>';
+    html += '<p class="lede">Ten original closed-book papers. Part 1 is 50 multiple-choice in 60 minutes (55% pass, 28/50). Part 2 is four short-written questions, unmarked, after you submit. Not the official WSET paper and not a dump of any commercial bank.</p>';
+    html += '<div class="paper-list">';
+    PAPERS.forEach(function (p) {
+      html += '<button type="button" class="paper-row" data-open="' + p[0] + '">';
+      html += "<h2>" + escapeHtml(p[1]) + "</h2>";
+      html += '<p class="meta">50 MCQ · 60 min · 4 written after submit</p>';
+      html += "</button>";
+    });
+    html += "</div>";
+    app.innerHTML = html;
+    app.querySelectorAll("[data-open]").forEach(function (btn) {
+      btn.onclick = function () { openPaper(btn.getAttribute("data-open")); };
+    });
+  }
+
+  function renderError() {
+    document.body.classList.remove("sheet");
+    app.innerHTML = '<p class="meta">WSET Level 3</p><h1 class="display">Practice exams</h1><p class="err">' +
+      escapeHtml(state.warn || "Could not load the paper.") +
+      '</p><p><a class="text-link" href="#" id="back-home">Back to list</a></p>';
+    document.getElementById("back-home").onclick = function (e) { e.preventDefault(); goHome(); };
+  }
+
+  function renderLoading() {
+    document.body.classList.remove("sheet");
+    app.innerHTML = '<p class="meta">WSET Level 3</p><p class="lede">Loading paper…</p>';
+  }
+
+  function renderSheet() {
+    document.body.classList.add("sheet");
+    const p = state.paper;
+    const low = state.seconds <= 300;
+    let html = '<div class="sticky">';
+    html += '<div class="sticky-row">';
+    html += '<button type="button" class="back" id="go-back">Back</button>';
+    html += '<div class="deck-name">' + escapeHtml(p.title) + "</div>";
+    html += '<div class="timer' + (low ? " low" : "") + '" id="timer">' + fmtTime(state.seconds) + "</div>";
+    html += "</div>";
+    html += '<div class="timer-sub" id="timer-sub">' + unanswered() + " unanswered</div>";
+    html += "</div>";
+
+    html += '<div class="intro">';
+    html += "<p><strong>Part 1 — Multiple choice</strong></p>";
+    html += "<p>50 questions. One correct answer each. No negative marking. 60 minutes. 55% pass (28/50).</p>";
+    html += "<p>Answer on this sheet. The clock stops when you finish. Written questions follow after submit and are not timed.</p>";
+    html += "</div>";
+
+    state.items.forEach(function (it, idx) {
+      html += '<div class="qblock" data-qid="' + escapeHtml(it.id) + '" id="' + escapeHtml(it.id) + '">';
+      html += '<p class="qnum">Question ' + (idx + 1) + " / 50</p>";
+      html += '<p class="stem">' + escapeHtml(it.q) + "</p>";
+      html += '<div class="opts" role="radiogroup" aria-label="Question ' + (idx + 1) + '">';
+      it.choices.forEach(function (c) {
+        const id = it.id + "-" + c.charAt(0);
+        const on = it.pick && it.pick === stripLetter(c);
+        html += '<label class="opt' + (on ? " picked" : "") + '" for="' + escapeHtml(id) + '">';
+        html += '<input type="radio" name="' + escapeHtml(it.id) + '" id="' + escapeHtml(id) + '" value="' + escapeHtml(c) + '"' + (on ? " checked" : "") + ">";
+        html += "<span>" + escapeHtml(c) + "</span></label>";
+      });
+      html += "</div></div>";
+    });
+
+    html += '<div class="finish-wrap">';
+    html += '<button type="button" class="btn" id="finish">Finish quiz</button>';
+    html += '<p class="warn" id="finish-warn">' + escapeHtml(state.warn || "") + "</p>";
+    html += "</div>";
+
+    app.innerHTML = html;
+    document.getElementById("go-back").onclick = goHome;
+    document.getElementById("finish").onclick = function () { finish(false); };
+    app.querySelectorAll(".opt input").forEach(function (input) {
+      input.addEventListener("change", function () {
+        pick(input.name, input.value);
+      });
+    });
+  }
+
+  function tally() {
+    const by = {};
+    BUCKETS.forEach(function (b) { by[b[0]] = { correct: 0, total: 0 }; });
+    let correct = 0;
+    state.items.forEach(function (it) {
+      const k = by[it.topic] ? it.topic : "still";
+      if (!by[k]) by[k] = { correct: 0, total: 0 };
+      by[k].total += 1;
+      if (it.ok) { by[k].correct += 1; correct += 1; }
+    });
+    return { correct: correct, by: by };
+  }
+
+  function renderResults() {
+    document.body.classList.remove("sheet");
+    const p = state.paper;
+    const t = tally();
+    const total = state.items.length;
+    const pct = Math.round(100 * t.correct / total);
+    const pass = pct >= (p.pass_mark_percent || 55);
+    const need = Math.ceil(total * (p.pass_mark_percent || 55) / 100);
+
+    let html = '<div class="topbar-like" style="margin-bottom:16px">';
+    html += '<button type="button" class="back" id="go-back">Back</button>';
+    html += "</div>";
+    html += '<p class="meta">Part 1 · ' + escapeHtml(p.title) + "</p>";
+    html += '<div class="score-wrap">';
+    html += '<div class="score-num">' + t.correct + " / " + total + "</div>";
+    html += '<p class="review-line">' + pct + "% · 55% pass line is " + need + "/" + total;
+    if (state.timedOut) html += " · time expired";
+    html += "</p>";
+    html += '<p class="' + (pass ? "pass-yes" : "pass-no") + '">' + (pass ? "At or above the MCQ pass line." : "Below the MCQ pass line.") + "</p>";
+    html += "</div>";
+
+    html += '<p class="meta" style="margin:24px 0 12px">Weak areas</p>';
+    html += '<div class="buckets">';
+    BUCKETS.forEach(function (b) {
+      const row = t.by[b[0]] || { correct: 0, total: 0 };
+      const bp = row.total ? Math.round(100 * row.correct / row.total) : 0;
+      const weak = row.total > 0 && bp < 55;
+      html += '<div class="bucket' + (weak ? " weak" : "") + '">';
+      html += '<div class="bucket-head"><div class="title">' + escapeHtml(b[1]) + "</div>";
+      html += '<div class="tag">' + row.correct + " / " + row.total + (weak ? " · below 55%" : "") + "</div></div>";
+      html += '<div class="bar" aria-hidden="true"><i style="width:' + bp + '%"></i></div>';
+      html += "</div>";
+    });
+    html += "</div>";
+
+    html += '<p><button type="button" class="btn secondary" id="toggle-review">' +
+      (state.showReview ? "Hide MCQ review" : "Show MCQ review") + "</button></p>";
+
+    if (state.showReview) {
+      html += '<div style="margin-top:16px">';
+      state.items.forEach(function (it, idx) {
+        html += '<div class="qblock">';
+        html += '<p class="qnum">Question ' + (idx + 1) + (it.ok ? " · correct" : " · miss") + "</p>";
+        html += '<p class="stem">' + escapeHtml(it.q) + "</p>";
+        html += '<div class="opts">';
+        it.choices.forEach(function (c) {
+          const text = stripLetter(c);
+          let cls = "opt";
+          if (text === it.key) cls += " correct";
+          else if (it.pick && text === it.pick) cls += " miss";
+          html += '<div class="' + cls + '"><span>' + escapeHtml(c) + "</span></div>";
+        });
+        html += "</div>";
+        if (it.why) html += '<p class="why">' + escapeHtml(it.why) + "</p>";
+        html += "</div>";
+      });
+      html += "</div>";
+    }
+
+    html += '<div class="written">';
+    html += '<p class="meta">Part 2 · Short written</p>';
+    html += '<h2 class="display">Written paper</h2>';
+    html += '<p class="lede">Four questions, 25 marks each. 55% pass on this part in the real exam as well. Not timed. Not auto-graded. Use the mark scheme as a checklist.</p>';
+
+    (p.written || []).forEach(function (wq, wi) {
+      const open = !!state.showScheme[wq.id];
+      html += '<div class="wblock">';
+      html += "<h3>" + escapeHtml(wq.title) + ' <span class="tag">' + wq.marks + " marks</span></h3>";
+      (wq.parts || []).forEach(function (part, pi) {
+        html += '<div class="wpart">';
+        html += '<p class="stem" style="font-size:16px;line-height:24px">' + escapeHtml(part.prompt) +
+          ' <span class="tag">(' + part.marks + ")</span></p>";
+        if (open) {
+          html += '<div class="scheme"><p class="tag">Mark scheme</p><ul>';
+          (part.points || []).forEach(function (pt) {
+            html += "<li>" + escapeHtml(pt) + "</li>";
+          });
+          html += "</ul></div>";
+        }
+        html += "</div>";
+      });
+      html += '<p style="margin:16px 0 0"><button type="button" class="btn secondary" data-scheme="' +
+        escapeHtml(wq.id) + '">' + (open ? "Hide mark scheme" : "Show mark scheme") + "</button></p>";
+      html += "</div>";
+    });
+
+    html += '<p><button type="button" class="btn ghost" id="home">Back to list</button></p>';
+    html += "</div>";
+
+    app.innerHTML = html;
+    document.getElementById("go-back").onclick = goHome;
+    document.getElementById("home").onclick = goHome;
+    document.getElementById("toggle-review").onclick = function () {
+      state.showReview = !state.showReview;
+      paint();
+    };
+    app.querySelectorAll("[data-scheme]").forEach(function (btn) {
+      btn.onclick = function () {
+        const id = btn.getAttribute("data-scheme");
+        state.showScheme[id] = !state.showScheme[id];
+        paint();
+      };
+    });
+  }
+
+  function paint() {
+    if (state.view === "home") renderHome();
+    else if (state.view === "loading") renderLoading();
+    else if (state.view === "error") renderError();
+    else if (state.view === "sheet") renderSheet();
+    else if (state.view === "results") renderResults();
+  }
+
+  paint();
+})();
+</script>
+</body>
+</html>

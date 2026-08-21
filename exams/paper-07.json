@@ -1,0 +1,828 @@
+{
+  "id": "paper-07",
+  "title": "Practice paper 7",
+  "duration_minutes": 60,
+  "pass_mark_percent": 55,
+  "mcq": [
+    {
+      "id": "q01",
+      "topic": "vineyard-winery",
+      "q": "Winter pruning is carried out mainly to",
+      "choices": [
+        "A Start photosynthesis in January",
+        "B Set the number of buds, and therefore yield, for the coming season",
+        "C Create noble rot",
+        "D Replace rootstocks"
+      ],
+      "answer": "B Set the number of buds, and therefore yield, for the coming season",
+      "why": "Spur or cane pruning decides next year’s crop before the vine wakes."
+    },
+    {
+      "id": "q02",
+      "topic": "vineyard-winery",
+      "q": "Diurnal range (warm days, cold nights) tends to",
+      "choices": [
+        "A Strip all acid overnight",
+        "B Help grapes keep acidity while still ripening flavour and sugar by day",
+        "C Prevent any colour in red grapes",
+        "D Replace irrigation"
+      ],
+      "answer": "B Help grapes keep acidity while still ripening flavour and sugar by day",
+      "why": "Altitude and continental nights are classic tools for freshness in warm regions."
+    },
+    {
+      "id": "q03",
+      "topic": "vineyard-winery",
+      "q": "Botrytis cinerea is ‘noble’ only when",
+      "choices": [
+        "A It always rots the bunches in wet weather with no sun",
+        "B Humid nights and dry days desiccate ripe berries without grey rot",
+        "C It attacks green, unripe fruit in spring",
+        "D It is sprayed on as sulphur"
+      ],
+      "answer": "B Humid nights and dry days desiccate ripe berries without grey rot",
+      "why": "The same fungus is grey rot in wet, tight, unripe bunches."
+    },
+    {
+      "id": "q04",
+      "topic": "vineyard-winery",
+      "q": "A north-facing slope in the northern hemisphere generally",
+      "choices": [
+        "A Is the warmest option at every latitude",
+        "B Receives less direct sun and is cooler than a south-facing slope",
+        "C Always ripens Cabernet better than a south face",
+        "D Has no effect on frost"
+      ],
+      "answer": "B Receives less direct sun and is cooler than a south-facing slope",
+      "why": "Aspect is a primary site factor; in the southern hemisphere the warm face is north."
+    },
+    {
+      "id": "q05",
+      "topic": "vineyard-winery",
+      "q": "Thermovinification of red grapes is used mainly to",
+      "choices": [
+        "A Keep a long, cool carbonic ferment",
+        "B Extract colour quickly with heat, then ferment a must with little tannin",
+        "C Replace SO2 entirely",
+        "D Grow flor"
+      ],
+      "answer": "B Extract colour quickly with heat, then ferment a must with little tannin",
+      "why": "A bulk-wine tool for colour without a long maceration."
+    },
+    {
+      "id": "q06",
+      "topic": "vineyard-winery",
+      "q": "Fining a red wine with egg white is traditionally used to",
+      "choices": [
+        "A Add residual sugar",
+        "B Soften tannin and help clarity",
+        "C Start MLF",
+        "D Increase colour"
+      ],
+      "answer": "B Soften tannin and help clarity",
+      "why": "Albumin binds harsher tannins; bentonite is more for protein in whites."
+    },
+    {
+      "id": "q07",
+      "topic": "vineyard-winery",
+      "q": "Sterile filtration before bottling a wine with residual sugar is done to",
+      "choices": [
+        "A Add yeast for a second ferment in bottle",
+        "B Remove microbes that could referment",
+        "C Increase oak flavour",
+        "D Raise pH"
+      ],
+      "answer": "B Remove microbes that could referment",
+      "why": "Sweet and off-dry wines need microbiological stability."
+    },
+    {
+      "id": "q08",
+      "topic": "vineyard-winery",
+      "q": "A portion of stems in a Pinot Noir ferment is used to",
+      "choices": [
+        "A Guarantee banana notes",
+        "B Add structure, perfume and a slightly higher pH if stems are ripe",
+        "C Extract PX sweetness",
+        "D Avoid all tannin"
+      ],
+      "answer": "B Add structure, perfume and a slightly higher pH if stems are ripe",
+      "why": "Whole bunch is a style tool; green stems add harshness, not perfume."
+    },
+    {
+      "id": "q09",
+      "topic": "still",
+      "q": "Haut-Médoc as an appellation covers",
+      "choices": [
+        "A Only Sauternes châteaux",
+        "B The communes south of the Médoc AOC that are not a village AOC, plus a regional frame for the famous villages",
+        "C Pomerol",
+        "D Chablis"
+      ],
+      "answer": "B The communes south of the Médoc AOC that are not a village AOC, plus a regional frame for the famous villages",
+      "why": "Many crus bourgeois are Haut-Médoc; Pauillac etc. are more specific village AOCs."
+    },
+    {
+      "id": "q10",
+      "topic": "still",
+      "q": "Lalande-de-Pomerol is",
+      "choices": [
+        "A A sweet Graves AOC",
+        "B A satellite red AOC next to Pomerol, Merlot-led",
+        "C A Champagne cru",
+        "D A Mosel village"
+      ],
+      "answer": "B A satellite red AOC next to Pomerol, Merlot-led",
+      "why": "Usually a step down in price from Pomerol proper."
+    },
+    {
+      "id": "q11",
+      "topic": "still",
+      "q": "Chambolle-Musigny is reputed for",
+      "choices": [
+        "A The sturdiest, most tannic Nuits style",
+        "B Particularly perfumed Côte de Nuits Pinot Noir",
+        "C Only white Grand Cru Chardonnay",
+        "D Gamay Nouveau"
+      ],
+      "answer": "B Particularly perfumed Côte de Nuits Pinot Noir",
+      "why": "Musigny and Bonnes-Mares sit here; the village stereotype is silk and perfume."
+    },
+    {
+      "id": "q12",
+      "topic": "still",
+      "q": "Mâcon-Lugny or Mâcon-Azé on a label means",
+      "choices": [
+        "A A Médoc cru",
+        "B A village-named Mâconnais Chardonnay",
+        "C An Alsace Grand Cru",
+        "D A Priorat vi de vila"
+      ],
+      "answer": "B A village-named Mâconnais Chardonnay",
+      "why": "Better than generic Mâcon-Villages when the village is named."
+    },
+    {
+      "id": "q13",
+      "topic": "still",
+      "q": "Savennières Roche-aux-Moines is",
+      "choices": [
+        "A A Muscadet cru",
+        "B A named dry Chenin site within Savennières",
+        "C A Sancerre hamlet",
+        "D A Hermitage climat"
+      ],
+      "answer": "B A named dry Chenin site within Savennières",
+      "why": "Coulée de Serrant is the other famous named Savennières site."
+    },
+    {
+      "id": "q14",
+      "topic": "still",
+      "q": "Cheverny’s everyday white is often",
+      "choices": [
+        "A 100% Viognier",
+        "B Sauvignon Blanc, sometimes with Chardonnay; Cour-Cheverny is the Romorantin AOC beside it",
+        "C Only Chenin moelleux",
+        "D Syrah"
+      ],
+      "answer": "B Sauvignon Blanc, sometimes with Chardonnay; Cour-Cheverny is the Romorantin AOC beside it",
+      "why": "Two neighbouring AOCs; do not mix the grapes up."
+    },
+    {
+      "id": "q15",
+      "topic": "still",
+      "q": "Clairette de Die is",
+      "choices": [
+        "A A dry Northern Rhône Syrah",
+        "B A sweetish, low-alcohol sparkling wine from the Diois, often Muscat-based (méthode ancestrale for the Tradition)",
+        "C A Tavel rosé",
+        "D A Sauternes"
+      ],
+      "answer": "B A sweetish, low-alcohol sparkling wine from the Diois, often Muscat-based (méthode ancestrale for the Tradition)",
+      "why": "East of the Northern Rhône proper; Crémant de Die is the drier traditional-method wine."
+    },
+    {
+      "id": "q16",
+      "topic": "still",
+      "q": "Beaumes-de-Venise as a still red (not the Muscat) is",
+      "choices": [
+        "A A Loire Chenin",
+        "B A Southern Rhône village red, Grenache-based",
+        "C A Mosel Riesling",
+        "D A Cava"
+      ],
+      "answer": "B A Southern Rhône village red, Grenache-based",
+      "why": "The village has both a VDN Muscat and a Côtes du Rhône-Villages-style red AOC."
+    },
+    {
+      "id": "q17",
+      "topic": "still",
+      "q": "Madiran is the South-West AOC for",
+      "choices": [
+        "A Malbec",
+        "B Tannat, a highly tannic red that often sees micro-oxygenation or long élevage",
+        "C Pinot Noir",
+        "D Albariño"
+      ],
+      "answer": "B Tannat, a highly tannic red that often sees micro-oxygenation or long élevage",
+      "why": "Tannat needs ripe fruit and time; Irouléguy is a smaller Tannat neighbour."
+    },
+    {
+      "id": "q18",
+      "topic": "still",
+      "q": "Sélection de Grains Nobles (SGN) in Alsace is",
+      "choices": [
+        "A A dry Pinot Blanc",
+        "B A botrytis selection at a very high must weight, always sweet",
+        "C A sparkling Crémant term",
+        "D A red wine"
+      ],
+      "answer": "B A botrytis selection at a very high must weight, always sweet",
+      "why": "Rarer and sweeter than Vendange Tardive; noble varieties."
+    },
+    {
+      "id": "q19",
+      "topic": "still",
+      "q": "Carema and Donnas are",
+      "choices": [
+        "A Chianti satellites",
+        "B Alpine Nebbiolo (Piedmont/Aosta), lighter and more scented than Barolo",
+        "C Soave crus",
+        "D Priorats"
+      ],
+      "answer": "B Alpine Nebbiolo (Piedmont/Aosta), lighter and more scented than Barolo",
+      "why": "High terraces; a different Nebbiolo conversation from the Langhe."
+    },
+    {
+      "id": "q20",
+      "topic": "still",
+      "q": "Rosso di Montalcino is",
+      "choices": [
+        "A 100% Cabernet from Bolgheri",
+        "B The earlier-released Sangiovese from the Brunello zone",
+        "C A Veneto Ripasso",
+        "D A Franciacorta"
+      ],
+      "answer": "B The earlier-released Sangiovese from the Brunello zone",
+      "why": "Same grape and zone, shorter ageing — a younger sibling, not a different variety."
+    },
+    {
+      "id": "q21",
+      "topic": "still",
+      "q": "Prosecco DOC still (tranquillo) exists, but the region’s fame is",
+      "choices": [
+        "A Barolo",
+        "B Sparkling Glera; the still wine is a minor part of the offer",
+        "C Amarone only",
+        "D Chianti"
+      ],
+      "answer": "B Sparkling Glera; the still wine is a minor part of the offer",
+      "why": "Do not assume every bottle from Conegliano is sparkling — but most are."
+    },
+    {
+      "id": "q22",
+      "topic": "still",
+      "q": "Aglianico del Vulture and Taurasi are",
+      "choices": [
+        "A Light Pinot Grigios",
+        "B Southern Italian Aglianico reds, high acid and tannin, built to age",
+        "C Flor Sherries",
+        "D Mosel Rieslings"
+      ],
+      "answer": "B Southern Italian Aglianico reds, high acid and tannin, built to age",
+      "why": "Vulture is Basilicata (volcanic); Taurasi is Campania DOCG."
+    },
+    {
+      "id": "q23",
+      "topic": "still",
+      "q": "Somontano in Aragón has a reputation for",
+      "choices": [
+        "A Only bush-vine Garnacha with no internationals",
+        "B A mix of local and international varieties in a relatively cool Pyrenean-foot climate",
+        "C Cava only",
+        "D Txakoli"
+      ],
+      "answer": "B A mix of local and international varieties in a relatively cool Pyrenean-foot climate",
+      "why": "Chardonnay, Gewurz and Cabernet sit beside Moristel and Garnacha."
+    },
+    {
+      "id": "q24",
+      "topic": "still",
+      "q": "Rueda Verdejo that has seen oak or lees will typically be",
+      "choices": [
+        "A Always a Fino",
+        "B Fuller and more textured than a straight stainless version",
+        "C A red Tempranillo",
+        "D A VDN"
+      ],
+      "answer": "B Fuller and more textured than a straight stainless version",
+      "why": "Most Rueda is tank-fresh; a minority is built for more weight."
+    },
+    {
+      "id": "q25",
+      "topic": "still",
+      "q": "Navarra, next to Rioja, is known for",
+      "choices": [
+        "A Only PX soleras",
+        "B Rosé (Garnacha) and a mix of Tempranillo and international reds",
+        "C Albariño only",
+        "D Assyrtiko"
+      ],
+      "answer": "B Rosé (Garnacha) and a mix of Tempranillo and international reds",
+      "why": "Historically rosado; now a broader still-wine DO."
+    },
+    {
+      "id": "q26",
+      "topic": "still",
+      "q": "Baden is Germany’s",
+      "choices": [
+        "A Coolest Mosel tributary",
+        "B Warmest large region, a source of Spätburgunder and fuller whites",
+        "C Only Eiswein zone",
+        "D Port satellite"
+      ],
+      "answer": "B Warmest large region, a source of Spätburgunder and fuller whites",
+      "why": "Kaiserstuhl volcanic warmth; Pinot family does well."
+    },
+    {
+      "id": "q27",
+      "topic": "still",
+      "q": "Santorini’s basket-trained (kouloura) vines exist mainly to",
+      "choices": [
+        "A Maximise machine harvest",
+        "B Protect buds and fruit from wind and to manage water on volcanic soils",
+        "C Create flor",
+        "D Hold ice for Eiswein"
+      ],
+      "answer": "B Protect buds and fruit from wind and to manage water on volcanic soils",
+      "why": "Windswept island; Assyrtiko trained low in wreaths."
+    },
+    {
+      "id": "q28",
+      "topic": "still",
+      "q": "Bucelas near Lisbon is a historic AOC for",
+      "choices": [
+        "A Baga reds only",
+        "B Dry, high-acid Arinto whites",
+        "C Vintage Port",
+        "D Tokaji"
+      ],
+      "answer": "B Dry, high-acid Arinto whites",
+      "why": "Atlantic-influenced white; Arinto keeps acid in the warmth."
+    },
+    {
+      "id": "q29",
+      "topic": "still",
+      "q": "Douro Superior is",
+      "choices": [
+        "A The coolest, wettest Port sub-zone",
+        "B The hottest, driest inland sub-zone, opened more recently to planting",
+        "C A Vinho Verde sub-region",
+        "D A Madeira parish"
+      ],
+      "answer": "B The hottest, driest inland sub-zone, opened more recently to planting",
+      "why": "Baixo Corgo wettest; Cima Corgo classic heart; Superior the frontier heat."
+    },
+    {
+      "id": "q30",
+      "topic": "still",
+      "q": "Oakville and Rutherford AVAs sit in",
+      "choices": [
+        "A The Willamette Valley",
+        "B The Napa Valley floor, associated with Cabernet Sauvignon",
+        "C Marlborough",
+        "D Priorat"
+      ],
+      "answer": "B The Napa Valley floor, associated with Cabernet Sauvignon",
+      "why": "Bench and floor sites; ‘Rutherford dust’ is local lore for a dusty tannin feel."
+    },
+    {
+      "id": "q31",
+      "topic": "still",
+      "q": "Leyda and San Antonio in Chile are",
+      "choices": [
+        "A The hottest Colchagua floors",
+        "B Cool coastal valleys for Sauvignon Blanc, Chardonnay and Pinot Noir",
+        "C Altitude Torrontés zones",
+        "D Icewine lakes"
+      ],
+      "answer": "B Cool coastal valleys for Sauvignon Blanc, Chardonnay and Pinot Noir",
+      "why": "Closer to the Pacific than Casablanca in places; marked acidity."
+    },
+    {
+      "id": "q32",
+      "topic": "still",
+      "q": "McLaren Vale, south of Adelaide, is known for",
+      "choices": [
+        "A Only bone-dry Riesling like Clare",
+        "B Shiraz and GSM in a warm, Gulf-moderated climate, often with old vines",
+        "C Central Otago Pinot",
+        "D Muscadet"
+      ],
+      "answer": "B Shiraz and GSM in a warm, Gulf-moderated climate, often with old vines",
+      "why": "Mediterranean; a little more breeze than Barossa; Grenache revival."
+    },
+    {
+      "id": "q33",
+      "topic": "still",
+      "q": "Central Otago sub-zones such as Bannockburn and Gibbston differ mainly in",
+      "choices": [
+        "A Grape variety by law (only Sauvignon in Gibbston)",
+        "B Altitude and heat: Gibbston cooler, Bannockburn riper Pinot",
+        "C Flor vs tank",
+        "D Port vs table"
+      ],
+      "answer": "B Altitude and heat: Gibbston cooler, Bannockburn riper Pinot",
+      "why": "One region, several mesoclimates; all Pinot-led."
+    },
+    {
+      "id": "q34",
+      "topic": "still",
+      "q": "A Canadian VQA wine, if it names a provincial GI, must be",
+      "choices": [
+        "A A blend from any country",
+        "B 100% from that province under the VQA rules",
+        "C 75% from California",
+        "D Fortified"
+      ],
+      "answer": "B 100% from that province under the VQA rules",
+      "why": "VQA is the quality/origin system in Ontario and British Columbia."
+    },
+    {
+      "id": "q35",
+      "topic": "still",
+      "q": "South African Wine of Origin (WO) on a label means",
+      "choices": [
+        "A No geographic claim",
+        "B The grapes come from the stated estate, ward, district or region under WO law",
+        "C The wine is always Pinotage",
+        "D It is a VDN"
+      ],
+      "answer": "B The grapes come from the stated estate, ward, district or region under WO law",
+      "why": "WO is the PDO-like hierarchy: estate < ward < district < region."
+    },
+    {
+      "id": "q36",
+      "topic": "still",
+      "q": "‘Contains sulphites’ on a label is",
+      "choices": [
+        "A Optional in the EU",
+        "B A mandatory allergen-style declaration when SO2 is above a low threshold",
+        "C Proof the wine is faulty",
+        "D Only for organic wine"
+      ],
+      "answer": "B A mandatory allergen-style declaration when SO2 is above a low threshold",
+      "why": "Almost all wine must carry it; it is not a quality statement."
+    },
+    {
+      "id": "q37",
+      "topic": "sparkling",
+      "q": "A Champagne labelled Blanc de Blancs is made from",
+      "choices": [
+        "A Pinot Noir and Meunier",
+        "B White grapes only — in practice Chardonnay",
+        "C A red still wine blend",
+        "D Glera"
+      ],
+      "answer": "B White grapes only — in practice Chardonnay",
+      "why": "Almost always Côte des Blancs Chardonnay; leaner, more citrus, ages to toast."
+    },
+    {
+      "id": "q38",
+      "topic": "sparkling",
+      "q": "The ancestral method (méthode ancestrale) relies on",
+      "choices": [
+        "A A complete dry first ferment then a sugared tirage like Champagne",
+        "B Bottling a still-fermenting wine so the last sugar makes the bubbles",
+        "C Flor in a solera",
+        "D Ice concentration"
+      ],
+      "answer": "B Bottling a still-fermenting wine so the last sugar makes the bubbles",
+      "why": "One ferment, often cloudy, lower pressure; Clairette de Die Tradition, some Pét-nat."
+    },
+    {
+      "id": "q39",
+      "topic": "sparkling",
+      "q": "Cava de Paraje Calificado is",
+      "choices": [
+        "A A tank Prosecco tier",
+        "B A single-vineyard, long-aged top tier of Cava",
+        "C A Sherry solera",
+        "D A German Sekt term"
+      ],
+      "answer": "B A single-vineyard, long-aged top tier of Cava",
+      "why": "Stricter ripeness, yield and lees rules than basic Cava."
+    },
+    {
+      "id": "q40",
+      "topic": "sparkling",
+      "q": "Tasmania is important to Australian sparkling wine because",
+      "choices": [
+        "A It is the hottest GI",
+        "B It is cool enough for high-acid Chardonnay and Pinot base wines",
+        "C It produces only fortified Muscat",
+        "D Glera is required"
+      ],
+      "answer": "B It is cool enough for high-acid Chardonnay and Pinot base wines",
+      "why": "Many mainland houses source base wine from the island."
+    },
+    {
+      "id": "q41",
+      "topic": "sparkling",
+      "q": "Sec on a sparkling label is",
+      "choices": [
+        "A Drier than Extra Brut",
+        "B Sweeter than Extra Dry (about 17–32 g/L)",
+        "C Always 0 g/L",
+        "D A fault"
+      ],
+      "answer": "B Sweeter than Extra Dry (about 17–32 g/L)",
+      "why": "The French word ‘sec’ is misleading on sparkling wine."
+    },
+    {
+      "id": "q42",
+      "topic": "fortified",
+      "q": "A Fino that is bottled and then stored warm for a year will typically",
+      "choices": [
+        "A Improve like Vintage Port",
+        "B Lose freshness and taste tired or oxidised",
+        "C Turn into PX",
+        "D Become a tank sparkler"
+      ],
+      "answer": "B Lose freshness and taste tired or oxidised",
+      "why": "Biological Sherries are fragile after bottling; buy recently bottled stock."
+    },
+    {
+      "id": "q43",
+      "topic": "fortified",
+      "q": "Single Quinta Vintage Port is",
+      "choices": [
+        "A A non-vintage tawny",
+        "B A vintage-dated Port from one estate, often declared in years that are not a general declaration",
+        "C Always white",
+        "D Aged under flor"
+      ],
+      "answer": "B A vintage-dated Port from one estate, often declared in years that are not a general declaration",
+      "why": "A house can bottle a quinta in a good-but-not-great year."
+    },
+    {
+      "id": "q44",
+      "topic": "fortified",
+      "q": "Verdelho Madeira sits on the sweetness scale",
+      "choices": [
+        "A Sweeter than Malmsey",
+        "B Between dry Sercial and medium-sweet Bual",
+        "C Below Fino in sugar",
+        "D As a red VDN"
+      ],
+      "answer": "B Between dry Sercial and medium-sweet Bual",
+      "why": "Sercial – Verdelho – Bual – Malmsey is the classic ladder."
+    },
+    {
+      "id": "q45",
+      "topic": "fortified",
+      "q": "Rivesaltes and Banyuls differ from Port mainly in",
+      "choices": [
+        "A Never using spirit",
+        "B Grapes, climate and often a more oxidative or Grenache/Muscat flavour, though mutage is the same idea",
+        "C Being tank sparkling wines",
+        "D Using only Palomino under flor"
+      ],
+      "answer": "B Grapes, climate and often a more oxidative or Grenache/Muscat flavour, though mutage is the same idea",
+      "why": "Same fortify-while-sweet idea; different place and varieties."
+    },
+    {
+      "id": "q46",
+      "topic": "fortified",
+      "q": "Commandaria is",
+      "choices": [
+        "A A dry Assyrtiko",
+        "B A historic sweet wine from Cyprus, from sun-dried grapes, sometimes fortified",
+        "C A Cava",
+        "D A Mosel Kabinett"
+      ],
+      "answer": "B A historic sweet wine from Cyprus, from sun-dried grapes, sometimes fortified",
+      "why": "Mavro and Xynisteri; WSET mentions it among sweet/fortified oddities."
+    },
+    {
+      "id": "q47",
+      "topic": "advice",
+      "q": "A wine that is ‘hazy’ on appearance may be",
+      "choices": [
+        "A Automatically faulty in every case",
+        "B Unfiltered and acceptable, or unstable and faulty — judge with the nose and palate",
+        "C Always TCA",
+        "D Always sparkling"
+      ],
+      "answer": "B Unfiltered and acceptable, or unstable and faulty — judge with the nose and palate",
+      "why": "Clarity is clear or hazy; haze plus off-aroma is the problem."
+    },
+    {
+      "id": "q48",
+      "topic": "advice",
+      "q": "Full-bodied red wines such as Barolo or Napa Cabernet are usually served",
+      "choices": [
+        "A At 4 °C",
+        "B At about 15–18 °C, not ‘room temperature’ of a warm modern room",
+        "C Boiling",
+        "D From the freezer"
+      ],
+      "answer": "B At about 15–18 °C, not ‘room temperature’ of a warm modern room",
+      "why": "Too warm emphasises alcohol; too cold emphasises tannin."
+    },
+    {
+      "id": "q49",
+      "topic": "advice",
+      "q": "A dish with a sweet glaze needs a wine that is",
+      "choices": [
+        "A Bone dry and high in tannin",
+        "B At least as sweet as the glaze",
+        "C Ice-cold Fino only",
+        "D Higher in chilli"
+      ],
+      "answer": "B At least as sweet as the glaze",
+      "why": "The same rule as dessert: the wine must not be drier than the food."
+    },
+    {
+      "id": "q50",
+      "topic": "advice",
+      "q": "Intensity on the SAT nose is judged on the scale",
+      "choices": [
+        "A Pale / medium / deep",
+        "B Light / medium(−) / medium / medium(+) / pronounced",
+        "C Short / long",
+        "D Dry / sweet"
+      ],
+      "answer": "B Light / medium(−) / medium / medium(+) / pronounced",
+      "why": "Do not use pale/deep for aroma; do not write a range."
+    }
+  ],
+  "written": [
+    {
+      "id": "w1",
+      "title": "Question 1 — Argentina and Chile",
+      "marks": 25,
+      "parts": [
+        {
+          "prompt": "Compare the key climate influences of Mendoza with those of Chile’s Central Valley and cool coastal valleys.",
+          "marks": 9,
+          "points": [
+            "Mendoza: rain shadow of the Andes, high altitude, bright light, irrigation from meltwater, continental, hail risk.",
+            "Chile Central Valley (Maipo, Colchagua, Cachapoal): Andes + coastal range, warm, dry, irrigation, Humboldt is weaker inland.",
+            "Casablanca / San Antonio / Leyda: coastal, Humboldt fog and breeze, cooler, Sauvignon/Chardonnay/Pinot.",
+            "Both countries are dry in the growing season by the standards of Europe — disease pressure is lower.",
+            "El Niño / frost / hail as hazards.",
+            "Do not say Chile is ‘always cool’ or Mendoza is ‘tropical’."
+          ]
+        },
+        {
+          "prompt": "Why does altitude matter so much to Malbec and to Torrontés?",
+          "marks": 8,
+          "points": [
+            "Altitude increases diurnal range: acid and colour (Malbec) and floral freshness (Torrontés) survive a sunny day.",
+            "Uco Valley vs lower Luján de Cuyo / Maipú: cooler, later, more floral Malbec.",
+            "Cafayate: very high, Torrontés stays aromatic and usually dry.",
+            "Too low and warm: jammy Malbec, blowsy Torrontés.",
+            "UV at height thickens skins.",
+            "Irrigation still needed — altitude is not rainfall."
+          ]
+        },
+        {
+          "prompt": "Outline typical winery choices for an inexpensive Chilean Cabernet versus a premium Uco Malbec.",
+          "marks": 8,
+          "points": [
+            "Inexpensive Cabernet: machine harvest, crush, short-ish maceration, cultured yeast, oak chips or staves, early release, fruity.",
+            "Premium Malbec: sort, longer skin time, French oak (some new), 12–18 months, may include whole berry, bottled for ageing.",
+            "Both usually MLF.",
+            "Acidification is common in warm musts where law and house style allow.",
+            "State the style contrast."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Question 2 — Spain beyond Rioja: Priorat, Rías Baixas, Rueda",
+      "marks": 25,
+      "parts": [
+        {
+          "prompt": "For each of Priorat, Rías Baixas and Rueda, state climate, principal grape and a typical style.",
+          "marks": 12,
+          "points": [
+            "Priorat: warm, dry, llicorella slopes; Garnacha and Cariñena; high alcohol, concentrated, often oak, DOCa.",
+            "Rías Baixas: cool, wet, Atlantic; Albariño; dry, high acid, peach/citrus, lees, drink young (some age).",
+            "Rueda: continental, quite high, frosty; Verdejo (± Sauvignon); dry, herbal, tank, everyday white.",
+            "One accurate extra detail per region (soil, blending partner, ageing) can score.",
+            "Do not relocate the grapes."
+          ]
+        },
+        {
+          "prompt": "What vineyard problem is typical in Rías Baixas, and how is it managed?",
+          "marks": 6,
+          "points": [
+            "Rain and humidity: downy mildew, grey rot, diluted fruit.",
+            "Pérgola / tendone (parra) to lift fruit into the air and allow breeze.",
+            "Shoot thinning, spray programmes, canopy air.",
+            "Granite soils drain; site near the sea is cooler.",
+            "Hand harvest and sorting in quality wines.",
+            "Contrast with Priorat drought / low yield."
+          ]
+        },
+        {
+          "prompt": "Contrast winery choices for a concentrated Priorat tinto and a fresh Rueda Verdejo.",
+          "marks": 7,
+          "points": [
+            "Priorat: low-yield fruit, destem, ferment on skins, often French oak, 12–20 months, MLF, built to age.",
+            "Rueda: protective, cool stainless, maybe lees, little new oak, bottled for early fruit.",
+            "Neither is fortified.",
+            "Priorat alcohol can be high; Rueda is moderate.",
+            "State the drink-window contrast."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "title": "Question 3 — Tank, transfer and traditional method",
+      "marks": 25,
+      "parts": [
+        {
+          "prompt": "Compare the three methods of making a fully sparkling wine: traditional, transfer and tank.",
+          "marks": 12,
+          "points": [
+            "Traditional: second ferment in this bottle; riddling; disgorge; most autolysis; most labour.",
+            "Transfer: second ferment in bottle, then emptied to tank under pressure, filtered, rebottled — keeps bottle-ferment character, skips riddling.",
+            "Tank / Charmat / Martinotti: second ferment in tank, filtered to bottle; primary fruit; cheap; Prosecco, Asti, much Sekt.",
+            "All can set sweetness at the end (dosage or adjustment).",
+            "Ancestral as a fourth, if mentioned, is a single ferment.",
+            "Name a wine for each of the three main methods."
+          ]
+        },
+        {
+          "prompt": "When would a producer choose tank over traditional method?",
+          "marks": 7,
+          "points": [
+            "Grape whose point is primary aroma (Glera, Muscat, Sauvignon).",
+            "Price point and volume.",
+            "Need to bottle and sell within months.",
+            "No wish for biscuit autolysis.",
+            "Easier to keep a consistent house sweetness.",
+            "Equipment already in the winery."
+          ]
+        },
+        {
+          "prompt": "What must you still get right in the vineyard for a tank-method wine to be more than just cheap fizz?",
+          "marks": 6,
+          "points": [
+            "Ripe but not flabby fruit; enough acid.",
+            "Healthy grapes (rot shows in an aromatic, early wine).",
+            "Yield not so high that flavour disappears.",
+            "Site/climate suited to the variety (Prosecco hills vs plains).",
+            "Clean, cool handling after harvest.",
+            "Variety choice that matches the method."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "title": "Question 4 — Sherry solera and PX at the table",
+      "marks": 25,
+      "parts": [
+        {
+          "prompt": "Explain how a criadera-and-solera system works for a Fino, and why young wine is added.",
+          "marks": 10,
+          "points": [
+            "Rows of butts: solera (oldest, from which you bottle) and several criaderas above.",
+            "Only a fraction is drawn each year; it is refreshed from the criadera above.",
+            "New vintage wine enters the youngest criadera.",
+            "Flor needs nutrients and a consistent strength/temperature — the refresh feeds it.",
+            "Style is consistent; no single vintage (unless a dated exception).",
+            "Biological vs the same hardware used oxidatively for Oloroso (no flor)."
+          ]
+        },
+        {
+          "prompt": "How is PX made sweet, and how is it used both as a wine and as a sweetening tool?",
+          "marks": 8,
+          "points": [
+            "Pedro Ximénez grapes sun-dried (asoleo), very high sugar, ferment barely starts, fortify, oxidative ageing.",
+            "Bottled as a luscious wine (raisin, molasses).",
+            "Blended into Oloroso to make Cream; into Fino-style to make Pale Cream.",
+            "Montilla is a major PX source.",
+            "Colour and sugar are extreme compared with Fino.",
+            "A little PX can also finish a sauce — but that is service, not winemaking."
+          ]
+        },
+        {
+          "prompt": "Pair a cold Fino and a room-cool PX with food, and state storage after opening.",
+          "marks": 7,
+          "points": [
+            "Fino: chilled, olives, fried fish, jamón; fridge, a few days.",
+            "PX: slightly cool, vanilla ice cream, chocolate, blue cheese; lasts weeks, cool and recorked.",
+            "Do not cellar opened Fino; do not serve PX ice-cold or Fino at 20 °C.",
+            "Sweetness match for PX; salt/fat for Fino.",
+            "Fresh bottling date matters far more for Fino."
+          ]
+        }
+      ]
+    }
+  ]
+}

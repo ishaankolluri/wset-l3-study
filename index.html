@@ -507,6 +507,27 @@
     border: 0;
   }
 
+
+  a.exam-link {
+    font-family: var(--font-chrome);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--wine);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  a.exam-link:hover { color: var(--wine-deep); }
+  a.exam-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .home-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .home-head .display { margin: 0; }
+
   @media (prefers-reduced-motion: reduce) {
     #stage { animation: none; }
     .face { transition: none; }
@@ -1083,8 +1104,9 @@
 
   function renderHome() {
     setThumb("");
-    let html = '<p class="meta">WSET Level 3</p>';
-    html += '<h1 class="display">Study</h1>';
+    let html = '<div class="home-head">';
+    html += '<div><p class="meta">WSET Level 3</p><h1 class="display">Study</h1></div>';
+    html += '<a class="exam-link" href="exam.html">Practice exams</a></div>';
     html += '<div class="deck-list">';
     DECKS.forEach(function (d) {
       const m = mastery(d);
